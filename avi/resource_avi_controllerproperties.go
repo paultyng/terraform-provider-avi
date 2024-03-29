@@ -226,6 +226,24 @@ func ResourceControllerPropertiesSchema() map[string]*schema.Schema {
 			Default:      "false",
 			ValidateFunc: validateBool,
 		},
+		"event_manager_max_goroutines": {
+			Type:         schema.TypeString,
+			Optional:     true,
+			Default:      "8",
+			ValidateFunc: validateInteger,
+		},
+		"event_manager_max_subscribers": {
+			Type:         schema.TypeString,
+			Optional:     true,
+			Default:      "5",
+			ValidateFunc: validateInteger,
+		},
+		"event_manager_processing_time_threshold": {
+			Type:         schema.TypeString,
+			Optional:     true,
+			Default:      "4",
+			ValidateFunc: validateInteger,
+		},
 		"false_positive_learning_config": {
 			Type:     schema.TypeSet,
 			Optional: true,

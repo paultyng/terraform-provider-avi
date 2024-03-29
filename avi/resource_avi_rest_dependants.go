@@ -30873,6 +30873,12 @@ func ResourceSeListSchema() *schema.Resource {
 				Computed: true,
 				Elem:     ResourceIpAddrSchema(),
 			},
+			"route_revoked_pool_down": {
+				Type:         schema.TypeString,
+				Optional:     true,
+				Computed:     true,
+				ValidateFunc: validateBool,
+			},
 			"scaleout_in_progress": {
 				Type:         schema.TypeString,
 				Optional:     true,
@@ -37787,6 +37793,12 @@ func ResourceVipSeAssignedSchema() *schema.Resource {
 				Type:     schema.TypeString,
 				Optional: true,
 				Computed: true,
+			},
+			"route_revoked_pool_down": {
+				Type:         schema.TypeString,
+				Optional:     true,
+				Computed:     true,
+				ValidateFunc: validateBool,
 			},
 			"scalein_in_progress": {
 				Type:         schema.TypeString,

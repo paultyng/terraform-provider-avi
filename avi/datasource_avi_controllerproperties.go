@@ -154,6 +154,18 @@ func dataSourceAviControllerProperties() *schema.Resource {
 				Type:     schema.TypeString,
 				Computed: true,
 			},
+			"event_manager_max_goroutines": {
+				Type:     schema.TypeString,
+				Computed: true,
+			},
+			"event_manager_max_subscribers": {
+				Type:     schema.TypeString,
+				Computed: true,
+			},
+			"event_manager_processing_time_threshold": {
+				Type:     schema.TypeString,
+				Computed: true,
+			},
 			"false_positive_learning_config": {
 				Type:     schema.TypeSet,
 				Computed: true,
