@@ -169,14 +169,12 @@ $ make testacc
 
 Note
 -----------------
-There is a major change in provider behavior. From now onwards, you will not be able to update the system default configurations if you don't have the terraform.state file for the particular resource.
+There is a major change in provider behavior with regards to system default configurations.
+From the version 22.1.6 you will not be able to update the system default configurations without having terraform.tfstate file.
 
-There is a necessary step you would have to perform before applying the configuration.
+#### Here are the steps to update the system default configurations
+Lets consider you have to update the backupconfiguration object
 
-First, you need to find out the UUID of the system default object, which you have to update using Terraform.<br>
-Once you get the UUID of the object, you have to do the `terraform import`.
-
-Here is an example of how to import the Terraform state for the resource.
 ```
 resource "avi_backupconfiguration" "abc" {
   name                   = "Backup-Configuration"
@@ -185,8 +183,7 @@ resource "avi_backupconfiguration" "abc" {
   backup_passphrase      = var.password
 }
 ```
-The above will be your terraform configuration based on that below is the command to import the terraform state.
-
-`terraform import avi_backupconfiguration.abc <uuid>`
-
-After this you can do the `terraform apply`
+Follow these steps
+1. Hit the url to get the UUID of the object `https://(controller)/api/backupconfiguration"`
+2. Once you get the UUID of the object, you have to import it using `terraform import avi_backupconfiguration.abc <uuid>` to get the `terraform.tfstate` file for the resource.
+3. Once done with the above, hit `terraform apply`

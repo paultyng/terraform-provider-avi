@@ -1,18 +1,27 @@
 ## 22.1.7 (Unreleased)
+BUG FIXES:
+- AV-202599 Resource avi_useraccount fails with generic error instead of providing user useful feedback
+- Failure to create avi_useraccount resource. https://github.com/vmware/terraform-provider-avi/issues/314
 
 ## 22.1.6 (March 08, 2024)
-ENHANCEMENTS:
-- Added newly introduced fields and resources [#576](https://github.com/vmware/terraform-provider-avi/pull/576/files)
-## 22.1.5 (October 30, 2023)
 NOTE:
 
-There is a major change in provider behavior. From the version 22.1.5, you will not be able to update the system default configurations if you don't have the terraform.state file for the particular resource.
+There is a major change in provider behavior with regards to system default configurations.
+From the version 22.1.6 you will not be able to update the system default configurations without having terraform.tfstate file.
 
 Please refer [README.MD](https://github.com/vmware/terraform-provider-avi/tree/22.1.7)
 
+ENHANCEMENTS:
+- Added new resource `avi_systemreport` [#576](https://github.com/vmware/terraform-provider-avi/pull/576/files)
+- Updated resources with newly added fields [#576](https://github.com/vmware/terraform-provider-avi/pull/576/files)
+
 BUG FIXES:
-- AV-187301: Entering worng credentials on terraform using AVI as provider while using Plan command break statefile
 - AV-187199: AVI terraform apply the resource object even if it is already exist without showing Error.
+- Terraform Provider Avi overwriting existing resources. https://github.com/vmware/terraform-provider-avi/issues/358
+
+## 22.1.5 (October 30, 2023)
+BUG FIXES:
+- AV-187301: Entering worng credentials on terraform using AVI as provider, while using Plan command breaks statefile
 - AV-186452: AVI-provider for Terraform version 22.1.2 and 22.1.4 creates any object in the Admin tenant.
 - AV-186737: Changes to certain subresources are not detected as changes by Terraform
 
