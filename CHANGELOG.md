@@ -1,4 +1,21 @@
-## 0.3.0 (Unreleased)
+## 22.1.7 (Unreleased)
+
+## 22.1.6 (March 08, 2024)
+ENHANCEMENTS:
+- Added newly introduced fields and resources [#576](https://github.com/vmware/terraform-provider-avi/pull/576/files)
+## 22.1.5 (October 30, 2023)
+NOTE:
+
+There is a major change in provider behavior. From the version 22.1.5, you will not be able to update the system default configurations if you don't have the terraform.state file for the particular resource.
+
+Please refer [README.MD](https://github.com/vmware/terraform-provider-avi/tree/22.1.7)
+
+BUG FIXES:
+- AV-187301: Entering worng credentials on terraform using AVI as provider while using Plan command break statefile
+- AV-187199: AVI terraform apply the resource object even if it is already exist without showing Error.
+- AV-186452: AVI-provider for Terraform version 22.1.2 and 22.1.4 creates any object in the Admin tenant.
+- AV-186737: Changes to certain subresources are not detected as changes by Terraform
+
 ## 0.2.3 (June 16, 2020)
 Features:
 - Updated Avi Go SDK to latest.
