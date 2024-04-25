@@ -6,8 +6,7 @@ BUG FIXES:
 ## 22.1.6 (March 08, 2024)
 NOTE:
 
-There is a major change in provider behavior with regards to system default configurations.
-From the version 22.1.6 you will not be able to update the system default configurations without having terraform.tfstate file.
+From version 22.1.6, updating system default configurations now requires first importing the existing configuration into the Terraform state.
 
 Please refer [README.MD](https://github.com/vmware/terraform-provider-avi/tree/22.1.7)
 
@@ -21,7 +20,7 @@ BUG FIXES:
 
 ## 22.1.5 (October 30, 2023)
 BUG FIXES:
-- AV-187301: Entering worng credentials on terraform using AVI as provider, while using Plan command breaks statefile
+- AV-187301: Entering wrong credentials on terraform using AVI as provider, while using Plan command breaks statefile
 - AV-186452: AVI-provider for Terraform version 22.1.2 and 22.1.4 creates any object in the Admin tenant.
 - AV-186737: Changes to certain subresources are not detected as changes by Terraform
 
