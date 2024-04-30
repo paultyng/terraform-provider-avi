@@ -27,6 +27,7 @@ resource "avi_controllerproperties" "foo" {
 
 The following arguments are supported:
 
+* `alert_manager_use_evms` - (Optional) Enable to use event manager as source of eventsdisable to use log manager as source of events. Field introduced in 30.2.1. Allowed in enterprise edition with any value, enterprise with cloud services edition.
 * `allow_admin_network_updates` - (Optional) Allow non-admin tenants to update admin vrfcontext and network objects. Field introduced in 18.2.7, 20.1.1. Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
 * `allow_ip_forwarding` - (Optional) Field introduced in 17.1.1. Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
 * `allow_unauthenticated_apis` - (Optional) Allow unauthenticated access for special apis. Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.

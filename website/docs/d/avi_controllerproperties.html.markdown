@@ -32,6 +32,7 @@ data "avi_controllerproperties" "foo_controllerproperties" {
 
 In addition to all arguments above, the following attributes are exported:
 
+* `alert_manager_use_evms` - Enable to use event manager as source of eventsdisable to use log manager as source of events. Field introduced in 30.2.1. Allowed in enterprise edition with any value, enterprise with cloud services edition.
 * `allow_admin_network_updates` - Allow non-admin tenants to update admin vrfcontext and network objects. Field introduced in 18.2.7, 20.1.1. Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
 * `allow_ip_forwarding` - Field introduced in 17.1.1. Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
 * `allow_unauthenticated_apis` - Allow unauthenticated access for special apis. Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
