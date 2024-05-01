@@ -12491,6 +12491,12 @@ func ResourceEventDetailsSchema() *schema.Resource {
 				Computed: true,
 				Elem:     ResourceTencentSetupSchema(),
 			},
+			"uber_event_details": {
+				Type:     schema.TypeSet,
+				Optional: true,
+				Computed: true,
+				Elem:     ResourceLogMgrUberEventDetailsSchema(),
+			},
 			"unbind_vs_se_details": {
 				Type:     schema.TypeSet,
 				Optional: true,
@@ -20851,6 +20857,57 @@ func ResourceLogMgrCleanupEventDetailsSchema() *schema.Resource {
 	}
 }
 
+func ResourceLogMgrUberEventDetailsSchema() *schema.Resource {
+	return &schema.Resource{
+		Schema: map[string]*schema.Schema{
+			"x_enum": {
+				Type:     schema.TypeString,
+				Optional: true,
+				Computed: true,
+			},
+			"x_float": {
+				Type:         schema.TypeString,
+				Optional:     true,
+				Computed:     true,
+				ValidateFunc: validateFloat,
+			},
+			"x_hex": {
+				Type:         schema.TypeString,
+				Optional:     true,
+				Computed:     true,
+				ValidateFunc: validateInteger,
+			},
+			"x_int": {
+				Type:         schema.TypeString,
+				Optional:     true,
+				Computed:     true,
+				ValidateFunc: validateInteger,
+			},
+			"x_msg": {
+				Type:     schema.TypeSet,
+				Optional: true,
+				Computed: true,
+				Elem:     ResourceUberEnumMessage1Schema(),
+			},
+			"x_rmsg": {
+				Type:     schema.TypeList,
+				Optional: true,
+				Elem:     ResourceUberEnumMessage1Schema(),
+			},
+			"x_str": {
+				Type:     schema.TypeString,
+				Optional: true,
+				Computed: true,
+			},
+			"x_x": {
+				Type:     schema.TypeList,
+				Optional: true,
+				Elem:     &schema.Schema{Type: schema.TypeInt},
+			},
+		},
+	}
+}
+
 func ResourceManagementNetworkConfigSchema() *schema.Resource {
 	return &schema.Resource{
 		Schema: map[string]*schema.Schema{
@@ -21151,7 +21208,7 @@ func ResourceMemoryBalancerInfoSchema() *schema.Resource {
 			"debug_message": {
 				Type:     schema.TypeString,
 				Optional: true,
-				Computed: true,
+				Default:  "exceeded memory limits",
 			},
 			"limit": {
 				Type:         schema.TypeString,
@@ -21185,6 +21242,12 @@ func ResourceMemoryBalancerInfoSchema() *schema.Resource {
 				Type:     schema.TypeString,
 				Optional: true,
 				Computed: true,
+			},
+			"task_queue_length": {
+				Type:         schema.TypeString,
+				Optional:     true,
+				Computed:     true,
+				ValidateFunc: validateInteger,
 			},
 			"threshold_percent": {
 				Type:         schema.TypeString,
@@ -35239,6 +35302,47 @@ func ResourceURIParamTokenSchema() *schema.Resource {
 			"type": {
 				Type:     schema.TypeString,
 				Required: true,
+			},
+		},
+	}
+}
+
+func ResourceUberEnumMessage1Schema() *schema.Resource {
+	return &schema.Resource{
+		Schema: map[string]*schema.Schema{
+			"rm": {
+				Type:     schema.TypeList,
+				Optional: true,
+				Elem:     ResourceUberEnumMessage2Schema(),
+			},
+			"rv": {
+				Type:     schema.TypeList,
+				Optional: true,
+				Elem:     &schema.Schema{Type: schema.TypeInt},
+			},
+			"v": {
+				Type:         schema.TypeString,
+				Optional:     true,
+				Computed:     true,
+				ValidateFunc: validateInteger,
+			},
+		},
+	}
+}
+
+func ResourceUberEnumMessage2Schema() *schema.Resource {
+	return &schema.Resource{
+		Schema: map[string]*schema.Schema{
+			"l": {
+				Type:     schema.TypeList,
+				Optional: true,
+				Elem:     &schema.Schema{Type: schema.TypeInt},
+			},
+			"v": {
+				Type:         schema.TypeString,
+				Optional:     true,
+				Computed:     true,
+				ValidateFunc: validateInteger,
 			},
 		},
 	}
