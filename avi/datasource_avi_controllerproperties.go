@@ -9,6 +9,10 @@ func dataSourceAviControllerProperties() *schema.Resource {
 	return &schema.Resource{
 		Read: ResourceAviControllerPropertiesRead,
 		Schema: map[string]*schema.Schema{
+			"alert_manager_use_evms": {
+				Type:     schema.TypeString,
+				Computed: true,
+			},
 			"allow_admin_network_updates": {
 				Type:     schema.TypeString,
 				Computed: true,

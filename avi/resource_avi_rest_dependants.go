@@ -21151,7 +21151,7 @@ func ResourceMemoryBalancerInfoSchema() *schema.Resource {
 			"debug_message": {
 				Type:     schema.TypeString,
 				Optional: true,
-				Computed: true,
+				Default:  "exceeded memory limits",
 			},
 			"limit": {
 				Type:         schema.TypeString,
@@ -21185,6 +21185,12 @@ func ResourceMemoryBalancerInfoSchema() *schema.Resource {
 				Type:     schema.TypeString,
 				Optional: true,
 				Computed: true,
+			},
+			"task_queue_length": {
+				Type:         schema.TypeString,
+				Optional:     true,
+				Computed:     true,
+				ValidateFunc: validateInteger,
 			},
 			"threshold_percent": {
 				Type:         schema.TypeString,

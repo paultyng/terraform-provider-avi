@@ -722,6 +722,12 @@ func ResourceServiceEngineGroupSchema() map[string]*schema.Schema {
 			Default:      "64",
 			ValidateFunc: validateInteger,
 		},
+		"max_num_http_sessions_to_store": {
+			Type:         schema.TypeString,
+			Optional:     true,
+			Default:      "50000",
+			ValidateFunc: validateInteger,
+		},
 		"max_num_se_dps": {
 			Type:         schema.TypeString,
 			Optional:     true,

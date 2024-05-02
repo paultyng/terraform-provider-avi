@@ -10,6 +10,12 @@ import (
 
 func ResourceControllerPropertiesSchema() map[string]*schema.Schema {
 	return map[string]*schema.Schema{
+		"alert_manager_use_evms": {
+			Type:         schema.TypeString,
+			Optional:     true,
+			Default:      "false",
+			ValidateFunc: validateBool,
+		},
 		"allow_admin_network_updates": {
 			Type:         schema.TypeString,
 			Optional:     true,
