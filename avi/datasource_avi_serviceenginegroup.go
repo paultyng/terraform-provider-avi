@@ -511,6 +511,10 @@ func dataSourceAviServiceEngineGroup() *schema.Resource {
 				Type:     schema.TypeString,
 				Computed: true,
 			},
+			"max_num_http_sessions_to_store": {
+				Type:     schema.TypeString,
+				Computed: true,
+			},
 			"max_num_se_dps": {
 				Type:     schema.TypeString,
 				Computed: true,

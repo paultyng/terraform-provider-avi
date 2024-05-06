@@ -10,6 +10,12 @@ import (
 
 func ResourceControllerPropertiesSchema() map[string]*schema.Schema {
 	return map[string]*schema.Schema{
+		"alert_manager_use_evms": {
+			Type:         schema.TypeString,
+			Optional:     true,
+			Default:      "false",
+			ValidateFunc: validateBool,
+		},
 		"allow_admin_network_updates": {
 			Type:         schema.TypeString,
 			Optional:     true,
@@ -226,6 +232,24 @@ func ResourceControllerPropertiesSchema() map[string]*schema.Schema {
 			Default:      "false",
 			ValidateFunc: validateBool,
 		},
+		"event_manager_max_goroutines": {
+			Type:         schema.TypeString,
+			Optional:     true,
+			Default:      "8",
+			ValidateFunc: validateInteger,
+		},
+		"event_manager_max_subscribers": {
+			Type:         schema.TypeString,
+			Optional:     true,
+			Default:      "5",
+			ValidateFunc: validateInteger,
+		},
+		"event_manager_processing_time_threshold": {
+			Type:         schema.TypeString,
+			Optional:     true,
+			Default:      "4",
+			ValidateFunc: validateInteger,
+		},
 		"false_positive_learning_config": {
 			Type:     schema.TypeSet,
 			Optional: true,
@@ -249,11 +273,6 @@ func ResourceControllerPropertiesSchema() map[string]*schema.Schema {
 			Optional:     true,
 			Default:      "1440",
 			ValidateFunc: validateInteger,
-		},
-		"file_reference_mappings": {
-			Type:     schema.TypeList,
-			Optional: true,
-			Elem:     ResourceFileReferenceMappingSchema(),
 		},
 		"fileobject_max_file_versions": {
 			Type:         schema.TypeString,

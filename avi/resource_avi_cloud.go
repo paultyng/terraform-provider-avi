@@ -56,7 +56,7 @@ func ResourceCloudSchema() map[string]*schema.Schema {
 		"dhcp_enabled": {
 			Type:         schema.TypeString,
 			Optional:     true,
-			Default:      "false",
+			Default:      "true",
 			ValidateFunc: validateBool,
 		},
 		"dns_provider_ref": {
@@ -112,7 +112,7 @@ func ResourceCloudSchema() map[string]*schema.Schema {
 		"ip6_autocfg_enabled": {
 			Type:         schema.TypeString,
 			Optional:     true,
-			Default:      "false",
+			Default:      "true",
 			ValidateFunc: validateBool,
 		},
 		"ipam_provider_ref": {
