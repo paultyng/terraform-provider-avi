@@ -93,7 +93,7 @@ func ResourceAviTaskJournalRead(d *schema.ResourceData, meta interface{}) error 
 
 func resourceAviTaskJournalCreate(d *schema.ResourceData, meta interface{}) error {
 	s := ResourceTaskJournalSchema()
-	err := APICreateOrUpdate(d, meta, "taskjournal", s)
+	err := APICreate(d, meta, "taskjournal", s)
 	if err == nil {
 		err = ResourceAviTaskJournalRead(d, meta)
 	}
@@ -103,7 +103,7 @@ func resourceAviTaskJournalCreate(d *schema.ResourceData, meta interface{}) erro
 func resourceAviTaskJournalUpdate(d *schema.ResourceData, meta interface{}) error {
 	s := ResourceTaskJournalSchema()
 	var err error
-	err = APICreateOrUpdate(d, meta, "taskjournal", s)
+	err = APIUpdate(d, meta, "taskjournal", s)
 	if err == nil {
 		err = ResourceAviTaskJournalRead(d, meta)
 	}
