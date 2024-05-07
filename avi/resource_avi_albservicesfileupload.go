@@ -80,7 +80,7 @@ func ResourceAviALBServicesFileUploadRead(d *schema.ResourceData, meta interface
 
 func resourceAviALBServicesFileUploadCreate(d *schema.ResourceData, meta interface{}) error {
 	s := ResourceALBServicesFileUploadSchema()
-	err := APICreate(d, meta, "albservicesfileupload", s)
+	err := APICreateOrUpdate(d, meta, "albservicesfileupload", s)
 	if err == nil {
 		err = ResourceAviALBServicesFileUploadRead(d, meta)
 	}
@@ -90,7 +90,7 @@ func resourceAviALBServicesFileUploadCreate(d *schema.ResourceData, meta interfa
 func resourceAviALBServicesFileUploadUpdate(d *schema.ResourceData, meta interface{}) error {
 	s := ResourceALBServicesFileUploadSchema()
 	var err error
-	err = APIUpdate(d, meta, "albservicesfileupload", s)
+	err = APICreateOrUpdate(d, meta, "albservicesfileupload", s)
 	if err == nil {
 		err = ResourceAviALBServicesFileUploadRead(d, meta)
 	}

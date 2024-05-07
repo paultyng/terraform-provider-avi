@@ -77,7 +77,7 @@ func ResourceAviGeoDBRead(d *schema.ResourceData, meta interface{}) error {
 
 func resourceAviGeoDBCreate(d *schema.ResourceData, meta interface{}) error {
 	s := ResourceGeoDBSchema()
-	err := APICreate(d, meta, "geodb", s)
+	err := APICreateOrUpdate(d, meta, "geodb", s)
 	if err == nil {
 		err = ResourceAviGeoDBRead(d, meta)
 	}
@@ -87,7 +87,7 @@ func resourceAviGeoDBCreate(d *schema.ResourceData, meta interface{}) error {
 func resourceAviGeoDBUpdate(d *schema.ResourceData, meta interface{}) error {
 	s := ResourceGeoDBSchema()
 	var err error
-	err = APIUpdate(d, meta, "geodb", s)
+	err = APICreateOrUpdate(d, meta, "geodb", s)
 	if err == nil {
 		err = ResourceAviGeoDBRead(d, meta)
 	}

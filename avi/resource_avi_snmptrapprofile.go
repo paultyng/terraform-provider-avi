@@ -67,7 +67,7 @@ func ResourceAviSnmpTrapProfileRead(d *schema.ResourceData, meta interface{}) er
 
 func resourceAviSnmpTrapProfileCreate(d *schema.ResourceData, meta interface{}) error {
 	s := ResourceSnmpTrapProfileSchema()
-	err := APICreate(d, meta, "snmptrapprofile", s)
+	err := APICreateOrUpdate(d, meta, "snmptrapprofile", s)
 	if err == nil {
 		err = ResourceAviSnmpTrapProfileRead(d, meta)
 	}
@@ -77,7 +77,7 @@ func resourceAviSnmpTrapProfileCreate(d *schema.ResourceData, meta interface{}) 
 func resourceAviSnmpTrapProfileUpdate(d *schema.ResourceData, meta interface{}) error {
 	s := ResourceSnmpTrapProfileSchema()
 	var err error
-	err = APIUpdate(d, meta, "snmptrapprofile", s)
+	err = APICreateOrUpdate(d, meta, "snmptrapprofile", s)
 	if err == nil {
 		err = ResourceAviSnmpTrapProfileRead(d, meta)
 	}

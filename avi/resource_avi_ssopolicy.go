@@ -84,7 +84,7 @@ func ResourceAviSSOPolicyRead(d *schema.ResourceData, meta interface{}) error {
 
 func resourceAviSSOPolicyCreate(d *schema.ResourceData, meta interface{}) error {
 	s := ResourceSSOPolicySchema()
-	err := APICreate(d, meta, "ssopolicy", s)
+	err := APICreateOrUpdate(d, meta, "ssopolicy", s)
 	if err == nil {
 		err = ResourceAviSSOPolicyRead(d, meta)
 	}
@@ -94,7 +94,7 @@ func resourceAviSSOPolicyCreate(d *schema.ResourceData, meta interface{}) error 
 func resourceAviSSOPolicyUpdate(d *schema.ResourceData, meta interface{}) error {
 	s := ResourceSSOPolicySchema()
 	var err error
-	err = APIUpdate(d, meta, "ssopolicy", s)
+	err = APICreateOrUpdate(d, meta, "ssopolicy", s)
 	if err == nil {
 		err = ResourceAviSSOPolicyRead(d, meta)
 	}
