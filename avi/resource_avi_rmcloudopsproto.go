@@ -70,7 +70,7 @@ func ResourceAviRmCloudOpsProtoRead(d *schema.ResourceData, meta interface{}) er
 
 func resourceAviRmCloudOpsProtoCreate(d *schema.ResourceData, meta interface{}) error {
 	s := ResourceRmCloudOpsProtoSchema()
-	err := APICreate(d, meta, "rmcloudopsproto", s)
+	err := APICreateOrUpdate(d, meta, "rmcloudopsproto", s)
 	if err == nil {
 		err = ResourceAviRmCloudOpsProtoRead(d, meta)
 	}
@@ -80,7 +80,7 @@ func resourceAviRmCloudOpsProtoCreate(d *schema.ResourceData, meta interface{}) 
 func resourceAviRmCloudOpsProtoUpdate(d *schema.ResourceData, meta interface{}) error {
 	s := ResourceRmCloudOpsProtoSchema()
 	var err error
-	err = APIUpdate(d, meta, "rmcloudopsproto", s)
+	err = APICreateOrUpdate(d, meta, "rmcloudopsproto", s)
 	if err == nil {
 		err = ResourceAviRmCloudOpsProtoRead(d, meta)
 	}

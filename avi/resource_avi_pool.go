@@ -472,7 +472,7 @@ func resourceAviPoolCreate(d *schema.ResourceData, meta interface{}) error {
 		}
 		ignoreServers = true
 	}
-	err := APICreate(d, meta, "pool", s)
+	err := APICreateOrUpdate(d, meta, "pool", s)
 	if err == nil {
 		err = ResourceAviPoolRead(d, meta)
 	}
@@ -496,14 +496,14 @@ func resourceAviPoolUpdate(d *schema.ResourceData, meta interface{}) error {
 			err = errors.New("Error Invalid Plan. cannot set ignore_servers and servers together")
 			return err
 		}
-		err = APIUpdate(d, meta, "pool", s, true)
+		err = APICreateOrUpdate(d, meta, "pool", s, true)
 		if err == nil {
 			err = ResourceAviPoolRead(d, meta)
 		}
 		d.Set("servers", nil)
 		d.Set("ignore_servers", true)
 	} else {
-		err = APIUpdate(d, meta, "pool", s)
+		err = APICreateOrUpdate(d, meta, "pool", s)
 		if err == nil {
 			err = ResourceAviPoolRead(d, meta)
 		}

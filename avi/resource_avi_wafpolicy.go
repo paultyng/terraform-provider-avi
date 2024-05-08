@@ -203,7 +203,7 @@ func ResourceAviWafPolicyRead(d *schema.ResourceData, meta interface{}) error {
 
 func resourceAviWafPolicyCreate(d *schema.ResourceData, meta interface{}) error {
 	s := ResourceWafPolicySchema()
-	err := APICreate(d, meta, "wafpolicy", s)
+	err := APICreateOrUpdate(d, meta, "wafpolicy", s)
 	if err == nil {
 		err = ResourceAviWafPolicyRead(d, meta)
 	}
@@ -213,7 +213,7 @@ func resourceAviWafPolicyCreate(d *schema.ResourceData, meta interface{}) error 
 func resourceAviWafPolicyUpdate(d *schema.ResourceData, meta interface{}) error {
 	s := ResourceWafPolicySchema()
 	var err error
-	err = APIUpdate(d, meta, "wafpolicy", s)
+	err = APICreateOrUpdate(d, meta, "wafpolicy", s)
 	if err == nil {
 		err = ResourceAviWafPolicyRead(d, meta)
 	}

@@ -78,7 +78,7 @@ func ResourceAviRoleRead(d *schema.ResourceData, meta interface{}) error {
 
 func resourceAviRoleCreate(d *schema.ResourceData, meta interface{}) error {
 	s := ResourceRoleSchema()
-	err := APICreate(d, meta, "role", s)
+	err := APICreateOrUpdate(d, meta, "role", s)
 	if err == nil {
 		err = ResourceAviRoleRead(d, meta)
 	}
@@ -88,7 +88,7 @@ func resourceAviRoleCreate(d *schema.ResourceData, meta interface{}) error {
 func resourceAviRoleUpdate(d *schema.ResourceData, meta interface{}) error {
 	s := ResourceRoleSchema()
 	var err error
-	err = APIUpdate(d, meta, "role", s)
+	err = APICreateOrUpdate(d, meta, "role", s)
 	if err == nil {
 		err = ResourceAviRoleRead(d, meta)
 	}

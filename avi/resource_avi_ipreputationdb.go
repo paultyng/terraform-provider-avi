@@ -97,7 +97,7 @@ func ResourceAviIPReputationDBRead(d *schema.ResourceData, meta interface{}) err
 
 func resourceAviIPReputationDBCreate(d *schema.ResourceData, meta interface{}) error {
 	s := ResourceIPReputationDBSchema()
-	err := APICreate(d, meta, "ipreputationdb", s)
+	err := APICreateOrUpdate(d, meta, "ipreputationdb", s)
 	if err == nil {
 		err = ResourceAviIPReputationDBRead(d, meta)
 	}
@@ -107,7 +107,7 @@ func resourceAviIPReputationDBCreate(d *schema.ResourceData, meta interface{}) e
 func resourceAviIPReputationDBUpdate(d *schema.ResourceData, meta interface{}) error {
 	s := ResourceIPReputationDBSchema()
 	var err error
-	err = APIUpdate(d, meta, "ipreputationdb", s)
+	err = APICreateOrUpdate(d, meta, "ipreputationdb", s)
 	if err == nil {
 		err = ResourceAviIPReputationDBRead(d, meta)
 	}
