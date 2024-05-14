@@ -68,6 +68,12 @@ func ResourceSystemConfigurationSchema() map[string]*schema.Schema {
 			Default:      "false",
 			ValidateFunc: validateBool,
 		},
+		"enable_host_header_check": {
+			Type:         schema.TypeString,
+			Optional:     true,
+			Default:      "false",
+			ValidateFunc: validateBool,
+		},
 		"fips_mode": {
 			Type:         schema.TypeString,
 			Optional:     true,
@@ -148,6 +154,11 @@ func ResourceSystemConfigurationSchema() map[string]*schema.Schema {
 			Elem:     &schema.Schema{Type: schema.TypeString},
 		},
 		"ssh_hmacs": {
+			Type:     schema.TypeList,
+			Optional: true,
+			Elem:     &schema.Schema{Type: schema.TypeString},
+		},
+		"trusted_host_profiles_refs": {
 			Type:     schema.TypeList,
 			Optional: true,
 			Elem:     &schema.Schema{Type: schema.TypeString},
