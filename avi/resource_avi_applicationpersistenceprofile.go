@@ -111,7 +111,7 @@ func ResourceAviApplicationPersistenceProfileRead(d *schema.ResourceData, meta i
 
 func resourceAviApplicationPersistenceProfileCreate(d *schema.ResourceData, meta interface{}) error {
 	s := ResourceApplicationPersistenceProfileSchema()
-	err := APICreate(d, meta, "applicationpersistenceprofile", s)
+	err := APICreateOrUpdate(d, meta, "applicationpersistenceprofile", s)
 	if err == nil {
 		err = ResourceAviApplicationPersistenceProfileRead(d, meta)
 	}
@@ -121,7 +121,7 @@ func resourceAviApplicationPersistenceProfileCreate(d *schema.ResourceData, meta
 func resourceAviApplicationPersistenceProfileUpdate(d *schema.ResourceData, meta interface{}) error {
 	s := ResourceApplicationPersistenceProfileSchema()
 	var err error
-	err = APIUpdate(d, meta, "applicationpersistenceprofile", s)
+	err = APICreateOrUpdate(d, meta, "applicationpersistenceprofile", s)
 	if err == nil {
 		err = ResourceAviApplicationPersistenceProfileRead(d, meta)
 	}

@@ -183,9 +183,6 @@ resource "avi_applicationprofile" "testApplicationProfile" {
 		use_app_keepalive_timeout = false
 	}
 	preserve_client_port = false
-	l4_ssl_profile {
-		ssl_stream_idle_timeout = "3600"
-	}
 }
 `
 
@@ -274,8 +271,5 @@ resource "avi_applicationprofile" "testApplicationProfile" {
 		use_app_keepalive_timeout = false
 	}
 	preserve_client_port = false
-	l4_ssl_profile {
-		ssl_stream_idle_timeout = "3600"
-	}
 }
 `

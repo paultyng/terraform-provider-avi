@@ -190,7 +190,7 @@ func ResourceAviGslbServiceRead(d *schema.ResourceData, meta interface{}) error 
 
 func resourceAviGslbServiceCreate(d *schema.ResourceData, meta interface{}) error {
 	s := ResourceGslbServiceSchema()
-	err := APICreate(d, meta, "gslbservice", s)
+	err := APICreateOrUpdate(d, meta, "gslbservice", s)
 	if err == nil {
 		err = ResourceAviGslbServiceRead(d, meta)
 	}
@@ -200,7 +200,7 @@ func resourceAviGslbServiceCreate(d *schema.ResourceData, meta interface{}) erro
 func resourceAviGslbServiceUpdate(d *schema.ResourceData, meta interface{}) error {
 	s := ResourceGslbServiceSchema()
 	var err error
-	err = APIUpdate(d, meta, "gslbservice", s)
+	err = APICreateOrUpdate(d, meta, "gslbservice", s)
 	if err == nil {
 		err = ResourceAviGslbServiceRead(d, meta)
 	}

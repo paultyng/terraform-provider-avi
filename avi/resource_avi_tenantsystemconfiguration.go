@@ -67,7 +67,7 @@ func ResourceAviTenantSystemConfigurationRead(d *schema.ResourceData, meta inter
 
 func resourceAviTenantSystemConfigurationCreate(d *schema.ResourceData, meta interface{}) error {
 	s := ResourceTenantSystemConfigurationSchema()
-	err := APICreate(d, meta, "tenantsystemconfiguration", s)
+	err := APICreateOrUpdate(d, meta, "tenantsystemconfiguration", s)
 	if err == nil {
 		err = ResourceAviTenantSystemConfigurationRead(d, meta)
 	}
@@ -77,7 +77,7 @@ func resourceAviTenantSystemConfigurationCreate(d *schema.ResourceData, meta int
 func resourceAviTenantSystemConfigurationUpdate(d *schema.ResourceData, meta interface{}) error {
 	s := ResourceTenantSystemConfigurationSchema()
 	var err error
-	err = APIUpdate(d, meta, "tenantsystemconfiguration", s)
+	err = APICreateOrUpdate(d, meta, "tenantsystemconfiguration", s)
 	if err == nil {
 		err = ResourceAviTenantSystemConfigurationRead(d, meta)
 	}

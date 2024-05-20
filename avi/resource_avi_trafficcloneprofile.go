@@ -83,7 +83,7 @@ func ResourceAviTrafficCloneProfileRead(d *schema.ResourceData, meta interface{}
 
 func resourceAviTrafficCloneProfileCreate(d *schema.ResourceData, meta interface{}) error {
 	s := ResourceTrafficCloneProfileSchema()
-	err := APICreate(d, meta, "trafficcloneprofile", s)
+	err := APICreateOrUpdate(d, meta, "trafficcloneprofile", s)
 	if err == nil {
 		err = ResourceAviTrafficCloneProfileRead(d, meta)
 	}
@@ -93,7 +93,7 @@ func resourceAviTrafficCloneProfileCreate(d *schema.ResourceData, meta interface
 func resourceAviTrafficCloneProfileUpdate(d *schema.ResourceData, meta interface{}) error {
 	s := ResourceTrafficCloneProfileSchema()
 	var err error
-	err = APIUpdate(d, meta, "trafficcloneprofile", s)
+	err = APICreateOrUpdate(d, meta, "trafficcloneprofile", s)
 	if err == nil {
 		err = ResourceAviTrafficCloneProfileRead(d, meta)
 	}
