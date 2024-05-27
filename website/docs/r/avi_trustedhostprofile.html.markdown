@@ -27,7 +27,7 @@ resource "avi_trustedhostprofile" "foo" {
 
 The following arguments are supported:
 
-* `host_list` - (Required) List of host ip(v4/v6) addresses or fqdns. Field introduced in 31.1.1. Allowed in enterprise edition with any value, enterprise with cloud services edition.
+* `host_list` - (Required) Comma separated list of host ip(v4/v6) addresses or fqdns. Field introduced in 31.1.1. Allowed in enterprise edition with any value, enterprise with cloud services edition.
 * `name` - (Required) Trustedhostprofile name. Field introduced in 31.1.1. Allowed in enterprise edition with any value, enterprise with cloud services edition.
 * `configpb_attributes` - (Optional) Protobuf versioning for config pbs. Field introduced in 31.1.1. Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services edition.
 * `tenant_ref` - (Optional) Tenant ref for trusted host profile. It is a reference to an object of type tenant. Field introduced in 31.1.1. Allowed in enterprise edition with any value, enterprise with cloud services edition.
