@@ -70,7 +70,7 @@ func ResourceAviSystemLimitsRead(d *schema.ResourceData, meta interface{}) error
 
 func resourceAviSystemLimitsCreate(d *schema.ResourceData, meta interface{}) error {
 	s := ResourceSystemLimitsSchema()
-	err := APICreate(d, meta, "systemlimits", s)
+	err := APICreateOrUpdate(d, meta, "systemlimits", s)
 	if err == nil {
 		err = ResourceAviSystemLimitsRead(d, meta)
 	}
@@ -80,7 +80,7 @@ func resourceAviSystemLimitsCreate(d *schema.ResourceData, meta interface{}) err
 func resourceAviSystemLimitsUpdate(d *schema.ResourceData, meta interface{}) error {
 	s := ResourceSystemLimitsSchema()
 	var err error
-	err = APIUpdate(d, meta, "systemlimits", s)
+	err = APICreateOrUpdate(d, meta, "systemlimits", s)
 	if err == nil {
 		err = ResourceAviSystemLimitsRead(d, meta)
 	}

@@ -104,7 +104,7 @@ func ResourceAviSiteVersionRead(d *schema.ResourceData, meta interface{}) error 
 
 func resourceAviSiteVersionCreate(d *schema.ResourceData, meta interface{}) error {
 	s := ResourceSiteVersionSchema()
-	err := APICreate(d, meta, "siteversion", s)
+	err := APICreateOrUpdate(d, meta, "siteversion", s)
 	if err == nil {
 		err = ResourceAviSiteVersionRead(d, meta)
 	}
@@ -114,7 +114,7 @@ func resourceAviSiteVersionCreate(d *schema.ResourceData, meta interface{}) erro
 func resourceAviSiteVersionUpdate(d *schema.ResourceData, meta interface{}) error {
 	s := ResourceSiteVersionSchema()
 	var err error
-	err = APIUpdate(d, meta, "siteversion", s)
+	err = APICreateOrUpdate(d, meta, "siteversion", s)
 	if err == nil {
 		err = ResourceAviSiteVersionRead(d, meta)
 	}

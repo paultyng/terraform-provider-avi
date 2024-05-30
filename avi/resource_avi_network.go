@@ -122,7 +122,7 @@ func ResourceAviNetworkRead(d *schema.ResourceData, meta interface{}) error {
 
 func resourceAviNetworkCreate(d *schema.ResourceData, meta interface{}) error {
 	s := ResourceNetworkSchema()
-	err := APICreate(d, meta, "network", s)
+	err := APICreateOrUpdate(d, meta, "network", s)
 	if err == nil {
 		err = ResourceAviNetworkRead(d, meta)
 	}
@@ -132,7 +132,7 @@ func resourceAviNetworkCreate(d *schema.ResourceData, meta interface{}) error {
 func resourceAviNetworkUpdate(d *schema.ResourceData, meta interface{}) error {
 	s := ResourceNetworkSchema()
 	var err error
-	err = APIUpdate(d, meta, "network", s)
+	err = APICreateOrUpdate(d, meta, "network", s)
 	if err == nil {
 		err = ResourceAviNetworkRead(d, meta)
 	}

@@ -74,7 +74,7 @@ func ResourceAviCloudPropertiesRead(d *schema.ResourceData, meta interface{}) er
 
 func resourceAviCloudPropertiesCreate(d *schema.ResourceData, meta interface{}) error {
 	s := ResourceCloudPropertiesSchema()
-	err := APICreate(d, meta, "cloudproperties", s)
+	err := APICreateOrUpdate(d, meta, "cloudproperties", s)
 	if err == nil {
 		err = ResourceAviCloudPropertiesRead(d, meta)
 	}
@@ -84,7 +84,7 @@ func resourceAviCloudPropertiesCreate(d *schema.ResourceData, meta interface{}) 
 func resourceAviCloudPropertiesUpdate(d *schema.ResourceData, meta interface{}) error {
 	s := ResourceCloudPropertiesSchema()
 	var err error
-	err = APIUpdate(d, meta, "cloudproperties", s)
+	err = APICreateOrUpdate(d, meta, "cloudproperties", s)
 	if err == nil {
 		err = ResourceAviCloudPropertiesRead(d, meta)
 	}

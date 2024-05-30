@@ -113,7 +113,7 @@ func ResourceAviWafCRSRead(d *schema.ResourceData, meta interface{}) error {
 
 func resourceAviWafCRSCreate(d *schema.ResourceData, meta interface{}) error {
 	s := ResourceWafCRSSchema()
-	err := APICreate(d, meta, "wafcrs", s)
+	err := APICreateOrUpdate(d, meta, "wafcrs", s)
 	if err == nil {
 		err = ResourceAviWafCRSRead(d, meta)
 	}
@@ -123,7 +123,7 @@ func resourceAviWafCRSCreate(d *schema.ResourceData, meta interface{}) error {
 func resourceAviWafCRSUpdate(d *schema.ResourceData, meta interface{}) error {
 	s := ResourceWafCRSSchema()
 	var err error
-	err = APIUpdate(d, meta, "wafcrs", s)
+	err = APICreateOrUpdate(d, meta, "wafcrs", s)
 	if err == nil {
 		err = ResourceAviWafCRSRead(d, meta)
 	}
