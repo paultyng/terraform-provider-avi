@@ -25819,6 +25819,12 @@ func ResourcePoolAnalyticsPolicySchema() *schema.Resource {
 				Default:      "false",
 				ValidateFunc: validateBool,
 			},
+			"metrics_realtime_update": {
+				Type:     schema.TypeSet,
+				Optional: true,
+				Computed: true,
+				Elem:     ResourceMetricsRealTimeUpdateSchema(),
+			},
 		},
 	}
 }
