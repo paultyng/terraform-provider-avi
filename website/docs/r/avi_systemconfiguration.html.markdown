@@ -36,7 +36,7 @@ The following arguments are supported:
 * `docker_mode` - (Optional) Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
 * `email_configuration` - (Optional) Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
 * `enable_cors` - (Optional) Enable cors header. Field introduced in 20.1.3. Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services edition.
-* `enable_host_header_check` - (Optional) Host header check. Field introduced in 31.1.1. Allowed in enterprise edition with any value, enterprise with cloud services edition.
+* `enable_host_header_check` - (Optional) Host header check. Field introduced in 30.2.2. Allowed in enterprise edition with any value, enterprise with cloud services edition.
 * `fips_mode` - (Optional) Fips mode current state. Field introduced in 20.1.1. Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
 * `global_tenant_config` - (Optional) Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
 * `host_key_algorithm_exclude` - (Optional) Users can specify comma separated list of deprecated host key algorithm.if nothing is specified, all known algorithms provided by openssh will be supported.this change could only apply on the controller node. Field introduced in 22.1.3. Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
@@ -52,7 +52,7 @@ The following arguments are supported:
 * `snmp_configuration` - (Optional) Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
 * `ssh_ciphers` - (Optional) Allowed ciphers list for ssh to the management interface on the controller and service engines. If this is not specified, all the default ciphers are allowed. Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
 * `ssh_hmacs` - (Optional) Allowed hmac list for ssh to the management interface on the controller and service engines. If this is not specified, all the default hmacs are allowed. Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-* `trusted_host_profiles_refs` - (Optional) Trusted host profiles for host header validation. Only function when enable_host_header_check is set to true. It is a reference to an object of type trustedhostprofile. Field introduced in 31.1.1. Allowed in enterprise edition with any value, enterprise with cloud services edition.
+* `trusted_host_profiles_refs` - (Optional) Trusted host profiles for host header validation. Only function when enable_host_header_check is set to true. It is a reference to an object of type trustedhostprofile. Field introduced in 30.2.2. Maximum of 20 items allowed. Allowed in enterprise edition with any value, enterprise with cloud services edition.
 * `welcome_workflow_complete` - (Optional) This flag is set once the initial controller setup workflow is complete. Field introduced in 18.2.3. Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
 
 

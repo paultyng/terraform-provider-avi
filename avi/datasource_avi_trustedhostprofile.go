@@ -14,9 +14,10 @@ func dataSourceAviTrustedHostProfile() *schema.Resource {
 				Computed: true,
 				Elem:     ResourceConfigPbAttributesSchema(),
 			},
-			"host_list": {
-				Type:     schema.TypeString,
+			"hosts": {
+				Type:     schema.TypeList,
 				Computed: true,
+				Elem:     &schema.Schema{Type: schema.TypeString},
 			},
 			"name": {
 				Type:     schema.TypeString,
