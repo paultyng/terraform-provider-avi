@@ -14,6 +14,10 @@ func dataSourceAviLicenseStatus() *schema.Resource {
 				Computed: true,
 				Elem:     ResourceConfigPbAttributesSchema(),
 			},
+			"essentials_enforced_at": {
+				Type:     schema.TypeString,
+				Computed: true,
+			},
 			"saas_status": {
 				Type:     schema.TypeSet,
 				Computed: true,

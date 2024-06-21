@@ -25464,6 +25464,11 @@ func ResourceParamSizeClassSchema() *schema.Resource {
 				Optional: true,
 				Computed: true,
 			},
+			"timestamps": {
+				Type:     schema.TypeList,
+				Optional: true,
+				Elem:     &schema.Schema{Type: schema.TypeInt},
+			},
 		},
 	}
 }
@@ -25476,6 +25481,11 @@ func ResourceParamTypeClassSchema() *schema.Resource {
 				Optional:     true,
 				Computed:     true,
 				ValidateFunc: validateInteger,
+			},
+			"timestamps": {
+				Type:     schema.TypeList,
+				Optional: true,
+				Elem:     &schema.Schema{Type: schema.TypeInt},
 			},
 			"type": {
 				Type:     schema.TypeString,
