@@ -445,7 +445,7 @@ func ResourceServiceEngineGroupSchema() map[string]*schema.Schema {
 		"gve_enabled": {
 			Type:         schema.TypeString,
 			Optional:     true,
-			Default:      "true",
+			Default:      "false",
 			ValidateFunc: validateBool,
 		},
 		"ha_mode": {
