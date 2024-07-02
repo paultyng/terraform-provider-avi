@@ -25829,12 +25829,6 @@ func ResourcePodTolerationSchema() *schema.Resource {
 func ResourcePoolAnalyticsPolicySchema() *schema.Resource {
 	return &schema.Resource{
 		Schema: map[string]*schema.Schema{
-			"enable_realtime_metrics": {
-				Type:         schema.TypeString,
-				Optional:     true,
-				Default:      "false",
-				ValidateFunc: validateBool,
-			},
 			"metrics_realtime_update": {
 				Type:     schema.TypeSet,
 				Optional: true,
