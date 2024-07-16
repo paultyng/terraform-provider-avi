@@ -3978,11 +3978,6 @@ func ResourceBuildInfoSchema() *schema.Resource {
 				Optional: true,
 				Computed: true,
 			},
-			"remote_image_ref": {
-				Type:     schema.TypeString,
-				Optional: true,
-				Computed: true,
-			},
 			"tag": {
 				Type:     schema.TypeString,
 				Optional: true,
@@ -18004,10 +17999,22 @@ func ResourceIPAddrLimitsSchema() *schema.Resource {
 func ResourceIPNetworkSubnetSchema() *schema.Resource {
 	return &schema.Resource{
 		Schema: map[string]*schema.Schema{
+			"ipv6_range": {
+				Type:     schema.TypeSet,
+				Optional: true,
+				Computed: true,
+				Elem:     ResourceIpAddrRangeSchema(),
+			},
 			"network_ref": {
 				Type:     schema.TypeString,
 				Optional: true,
 				Computed: true,
+			},
+			"range": {
+				Type:     schema.TypeSet,
+				Optional: true,
+				Computed: true,
+				Elem:     ResourceIpAddrRangeSchema(),
 			},
 			"subnet": {
 				Type:     schema.TypeSet,
@@ -18704,6 +18711,18 @@ func ResourceIpCommunitySchema() *schema.Resource {
 func ResourceIpReputationConfigSchema() *schema.Resource {
 	return &schema.Resource{
 		Schema: map[string]*schema.Schema{
+			"enable_ipv4_reputation": {
+				Type:         schema.TypeString,
+				Optional:     true,
+				Computed:     true,
+				ValidateFunc: validateBool,
+			},
+			"enable_ipv6_reputation": {
+				Type:         schema.TypeString,
+				Optional:     true,
+				Computed:     true,
+				ValidateFunc: validateBool,
+			},
 			"ip_reputation_file_object_expiry_duration": {
 				Type:         schema.TypeString,
 				Optional:     true,

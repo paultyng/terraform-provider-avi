@@ -74,6 +74,12 @@ func ResourceSystemConfigurationSchema() map[string]*schema.Schema {
 			Default:      "false",
 			ValidateFunc: validateBool,
 		},
+		"enable_telemetry": {
+			Type:         schema.TypeString,
+			Optional:     true,
+			Default:      "true",
+			ValidateFunc: validateBool,
+		},
 		"fips_mode": {
 			Type:         schema.TypeString,
 			Optional:     true,

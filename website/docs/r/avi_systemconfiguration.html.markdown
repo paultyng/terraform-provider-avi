@@ -37,6 +37,7 @@ The following arguments are supported:
 * `email_configuration` - (Optional) Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
 * `enable_cors` - (Optional) Enable cors header. Field introduced in 20.1.3. Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services edition.
 * `enable_host_header_check` - (Optional) Host header check. Field introduced in 22.1.7, 30.2.2, 31.1.1. Allowed in enterprise edition with any value, enterprise with cloud services edition.
+* `enable_telemetry` - (Optional) Enables sending anonymous operational metrics to avi. Field introduced in 31.1.1. Allowed in enterprise edition with any value, enterprise with cloud services edition.
 * `fips_mode` - (Optional) Fips mode current state. Field introduced in 20.1.1. Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
 * `global_tenant_config` - (Optional) Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
 * `host_key_algorithm_exclude` - (Optional) Users can specify comma separated list of deprecated host key algorithm.if nothing is specified, all known algorithms provided by openssh will be supported.this change could only apply on the controller node. Field introduced in 22.1.3. Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
