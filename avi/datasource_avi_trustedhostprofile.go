@@ -5,31 +5,28 @@ package avi
 
 import "github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 
-func dataSourceAviLicenseStatus() *schema.Resource {
+func dataSourceAviTrustedHostProfile() *schema.Resource {
 	return &schema.Resource{
-		Read: ResourceAviLicenseStatusRead,
+		Read: ResourceAviTrustedHostProfileRead,
 		Schema: map[string]*schema.Schema{
 			"configpb_attributes": {
 				Type:     schema.TypeSet,
 				Computed: true,
 				Elem:     ResourceConfigPbAttributesSchema(),
 			},
-			"essentials_enforced_at": {
+			"hosts": {
+				Type:     schema.TypeList,
+				Computed: true,
+				Elem:     &schema.Schema{Type: schema.TypeString},
+			},
+			"name": {
 				Type:     schema.TypeString,
+				Optional: true,
 				Computed: true,
 			},
-			"saas_status": {
-				Type:     schema.TypeSet,
-				Computed: true,
-				Elem:     ResourceSaasLicensingStatusSchema(),
-			},
-			"service_update": {
-				Type:     schema.TypeSet,
-				Computed: true,
-				Elem:     ResourceLicenseServiceUpdateSchema(),
-			},
-			"tenant_uuid": {
+			"tenant_ref": {
 				Type:     schema.TypeString,
+				Optional: true,
 				Computed: true,
 			},
 			"uuid": {

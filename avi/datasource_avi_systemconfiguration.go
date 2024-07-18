@@ -55,6 +55,14 @@ func dataSourceAviSystemConfiguration() *schema.Resource {
 				Type:     schema.TypeString,
 				Computed: true,
 			},
+			"enable_host_header_check": {
+				Type:     schema.TypeString,
+				Computed: true,
+			},
+			"enable_telemetry": {
+				Type:     schema.TypeString,
+				Computed: true,
+			},
 			"fips_mode": {
 				Type:     schema.TypeString,
 				Computed: true,
@@ -121,6 +129,11 @@ func dataSourceAviSystemConfiguration() *schema.Resource {
 				Elem:     &schema.Schema{Type: schema.TypeString},
 			},
 			"ssh_hmacs": {
+				Type:     schema.TypeList,
+				Computed: true,
+				Elem:     &schema.Schema{Type: schema.TypeString},
+			},
+			"trusted_host_profiles_refs": {
 				Type:     schema.TypeList,
 				Computed: true,
 				Elem:     &schema.Schema{Type: schema.TypeString},

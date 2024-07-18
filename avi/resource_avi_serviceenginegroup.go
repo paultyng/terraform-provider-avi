@@ -442,6 +442,12 @@ func ResourceServiceEngineGroupSchema() map[string]*schema.Schema {
 			Default:      "15",
 			ValidateFunc: validateInteger,
 		},
+		"gve_enabled": {
+			Type:         schema.TypeString,
+			Optional:     true,
+			Default:      "false",
+			ValidateFunc: validateBool,
+		},
 		"ha_mode": {
 			Type:     schema.TypeString,
 			Optional: true,
@@ -720,6 +726,12 @@ func ResourceServiceEngineGroupSchema() map[string]*schema.Schema {
 			Type:         schema.TypeString,
 			Optional:     true,
 			Default:      "64",
+			ValidateFunc: validateInteger,
+		},
+		"max_num_http_sessions_to_store": {
+			Type:         schema.TypeString,
+			Optional:     true,
+			Default:      "50000",
 			ValidateFunc: validateInteger,
 		},
 		"max_num_se_dps": {

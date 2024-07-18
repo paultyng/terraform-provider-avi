@@ -9,6 +9,10 @@ func dataSourceAviControllerProperties() *schema.Resource {
 	return &schema.Resource{
 		Read: ResourceAviControllerPropertiesRead,
 		Schema: map[string]*schema.Schema{
+			"alert_manager_use_evms": {
+				Type:     schema.TypeString,
+				Computed: true,
+			},
 			"allow_admin_network_updates": {
 				Type:     schema.TypeString,
 				Computed: true,
@@ -154,6 +158,18 @@ func dataSourceAviControllerProperties() *schema.Resource {
 				Type:     schema.TypeString,
 				Computed: true,
 			},
+			"event_manager_max_goroutines": {
+				Type:     schema.TypeString,
+				Computed: true,
+			},
+			"event_manager_max_subscribers": {
+				Type:     schema.TypeString,
+				Computed: true,
+			},
+			"event_manager_processing_time_threshold": {
+				Type:     schema.TypeString,
+				Computed: true,
+			},
 			"false_positive_learning_config": {
 				Type:     schema.TypeSet,
 				Computed: true,
@@ -170,11 +186,6 @@ func dataSourceAviControllerProperties() *schema.Resource {
 			"file_object_cleanup_period": {
 				Type:     schema.TypeString,
 				Computed: true,
-			},
-			"file_reference_mappings": {
-				Type:     schema.TypeList,
-				Computed: true,
-				Elem:     ResourceFileReferenceMappingSchema(),
 			},
 			"fileobject_max_file_versions": {
 				Type:     schema.TypeString,
@@ -325,14 +336,6 @@ func dataSourceAviControllerProperties() *schema.Resource {
 				Computed: true,
 			},
 			"shared_ssl_certificates": {
-				Type:     schema.TypeString,
-				Computed: true,
-			},
-			"skopeo_retry_interval": {
-				Type:     schema.TypeString,
-				Computed: true,
-			},
-			"skopeo_retry_limit": {
 				Type:     schema.TypeString,
 				Computed: true,
 			},

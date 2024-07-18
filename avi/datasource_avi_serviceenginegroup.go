@@ -310,6 +310,10 @@ func dataSourceAviServiceEngineGroup() *schema.Resource {
 				Type:     schema.TypeString,
 				Computed: true,
 			},
+			"gve_enabled": {
+				Type:     schema.TypeString,
+				Computed: true,
+			},
 			"ha_mode": {
 				Type:     schema.TypeString,
 				Computed: true,
@@ -508,6 +512,10 @@ func dataSourceAviServiceEngineGroup() *schema.Resource {
 				Computed: true,
 			},
 			"max_memory_per_mempool": {
+				Type:     schema.TypeString,
+				Computed: true,
+			},
+			"max_num_http_sessions_to_store": {
 				Type:     schema.TypeString,
 				Computed: true,
 			},
