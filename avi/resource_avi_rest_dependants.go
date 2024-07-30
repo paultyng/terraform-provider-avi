@@ -31439,6 +31439,12 @@ func ResourceSeRateLimitersSchema() *schema.Resource {
 				Default:      "2000",
 				ValidateFunc: validateInteger,
 			},
+			"nd_rl": {
+				Type:         schema.TypeString,
+				Optional:     true,
+				Default:      "2000",
+				ValidateFunc: validateInteger,
+			},
 			"rst_rl": {
 				Type:         schema.TypeString,
 				Optional:     true,
