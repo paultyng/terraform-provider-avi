@@ -27093,7 +27093,7 @@ func ResourceSCTPProxyProfileSchema() *schema.Resource {
 			"receive_window": {
 				Type:         schema.TypeString,
 				Optional:     true,
-				Default:      "256",
+				Default:      "1024",
 				ValidateFunc: validateInteger,
 			},
 			"reset_timeout": {

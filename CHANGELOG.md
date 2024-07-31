@@ -1,4 +1,6 @@
-## 22.1.7 (Unreleased)
+## 22.1.8 (Unreleased)
+
+## 22.1.7
 BUG FIXES:
 - AV-202599 Resource avi_useraccount fails with generic error instead of providing user useful feedback
 - Failure to create avi_useraccount resource. https://github.com/vmware/terraform-provider-avi/issues/314
