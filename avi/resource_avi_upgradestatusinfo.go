@@ -26,6 +26,12 @@ func ResourceUpgradeStatusInfoSchema() map[string]*schema.Schema {
 			Computed:     true,
 			ValidateFunc: validateBool,
 		},
+		"dryrun_info": {
+			Type:     schema.TypeSet,
+			Optional: true,
+			Computed: true,
+			Elem:     ResourceDryrunInfoSchema(),
+		},
 		"duration": {
 			Type:         schema.TypeString,
 			Optional:     true,

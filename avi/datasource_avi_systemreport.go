@@ -21,6 +21,11 @@ func dataSourceAviSystemReport() *schema.Resource {
 				Type:     schema.TypeString,
 				Computed: true,
 			},
+			"dryrun_info": {
+				Type:     schema.TypeSet,
+				Computed: true,
+				Elem:     ResourceDryrunInfoSchema(),
+			},
 			"events": {
 				Type:     schema.TypeList,
 				Computed: true,

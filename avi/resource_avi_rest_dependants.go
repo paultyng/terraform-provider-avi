@@ -11140,6 +11140,74 @@ func ResourceDosThresholdProfileSchema() *schema.Resource {
 	}
 }
 
+func ResourceDryrunInfoSchema() *schema.Resource {
+	return &schema.Resource{
+		Schema: map[string]*schema.Schema{
+			"duration": {
+				Type:         schema.TypeString,
+				Optional:     true,
+				Computed:     true,
+				ValidateFunc: validateInteger,
+			},
+			"end_time": {
+				Type:     schema.TypeString,
+				Optional: true,
+				Computed: true,
+			},
+			"operation": {
+				Type:     schema.TypeString,
+				Optional: true,
+				Computed: true,
+			},
+			"params": {
+				Type:     schema.TypeSet,
+				Optional: true,
+				Computed: true,
+				Elem:     ResourceUpgradeParamsSchema(),
+			},
+			"progress": {
+				Type:         schema.TypeString,
+				Optional:     true,
+				Default:      "0",
+				ValidateFunc: validateInteger,
+			},
+			"start_time": {
+				Type:     schema.TypeString,
+				Optional: true,
+				Computed: true,
+			},
+			"state": {
+				Type:     schema.TypeSet,
+				Optional: true,
+				Computed: true,
+				Elem:     ResourceUpgradeOpsStateSchema(),
+			},
+			"tasks_completed": {
+				Type:         schema.TypeString,
+				Optional:     true,
+				Computed:     true,
+				ValidateFunc: validateInteger,
+			},
+			"total_tasks": {
+				Type:         schema.TypeString,
+				Optional:     true,
+				Computed:     true,
+				ValidateFunc: validateInteger,
+			},
+			"upgrade_events": {
+				Type:     schema.TypeList,
+				Optional: true,
+				Elem:     ResourceEventMapSchema(),
+			},
+			"worker": {
+				Type:     schema.TypeString,
+				Optional: true,
+				Computed: true,
+			},
+		},
+	}
+}
+
 func ResourceDsrProfileSchema() *schema.Resource {
 	return &schema.Resource{
 		Schema: map[string]*schema.Schema{
@@ -27224,6 +27292,12 @@ func ResourceResponseMatchTargetSchema() *schema.Resource {
 func ResourceRestoreParamsSchema() *schema.Resource {
 	return &schema.Resource{
 		Schema: map[string]*schema.Schema{
+			"dryrun": {
+				Type:         schema.TypeString,
+				Optional:     true,
+				Default:      "false",
+				ValidateFunc: validateBool,
+			},
 			"enable_migration": {
 				Type:         schema.TypeString,
 				Optional:     true,
@@ -35515,6 +35589,12 @@ func ResourceUpgradeControllerParamsSchema() *schema.Resource {
 				Optional: true,
 				Computed: true,
 			},
+			"dryrun": {
+				Type:         schema.TypeString,
+				Optional:     true,
+				Default:      "false",
+				ValidateFunc: validateBool,
+			},
 			"image_ref": {
 				Type:     schema.TypeString,
 				Required: true,
@@ -35695,6 +35775,12 @@ func ResourceUpgradeParamsSchema() *schema.Resource {
 				Optional: true,
 				Computed: true,
 			},
+			"dryrun": {
+				Type:         schema.TypeString,
+				Optional:     true,
+				Computed:     true,
+				ValidateFunc: validateBool,
+			},
 			"image_ref": {
 				Type:     schema.TypeString,
 				Optional: true,
@@ -35703,7 +35789,7 @@ func ResourceUpgradeParamsSchema() *schema.Resource {
 			"prechecks_only": {
 				Type:         schema.TypeString,
 				Optional:     true,
-				Default:      "false",
+				Computed:     true,
 				ValidateFunc: validateBool,
 			},
 			"se_group_options": {
@@ -35725,13 +35811,13 @@ func ResourceUpgradeParamsSchema() *schema.Resource {
 			"skip_warnings": {
 				Type:         schema.TypeString,
 				Optional:     true,
-				Default:      "false",
+				Computed:     true,
 				ValidateFunc: validateBool,
 			},
 			"system": {
 				Type:         schema.TypeString,
 				Optional:     true,
-				Default:      "false",
+				Computed:     true,
 				ValidateFunc: validateBool,
 			},
 		},
@@ -35772,6 +35858,12 @@ func ResourceUpgradeReadinessCheckObjSchema() *schema.Resource {
 				Type:     schema.TypeString,
 				Optional: true,
 				Computed: true,
+			},
+			"progress": {
+				Type:         schema.TypeString,
+				Optional:     true,
+				Default:      "0",
+				ValidateFunc: validateInteger,
 			},
 			"start_time": {
 				Type:     schema.TypeString,
@@ -35845,6 +35937,12 @@ func ResourceUpgradeSystemParamsSchema() *schema.Resource {
 				Type:     schema.TypeString,
 				Optional: true,
 				Computed: true,
+			},
+			"dryrun": {
+				Type:         schema.TypeString,
+				Optional:     true,
+				Default:      "false",
+				ValidateFunc: validateBool,
 			},
 			"image_ref": {
 				Type:     schema.TypeString,

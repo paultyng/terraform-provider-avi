@@ -26,6 +26,12 @@ func ResourceSystemReportSchema() map[string]*schema.Schema {
 			Default:      "false",
 			ValidateFunc: validateBool,
 		},
+		"dryrun_info": {
+			Type:     schema.TypeSet,
+			Optional: true,
+			Computed: true,
+			Elem:     ResourceDryrunInfoSchema(),
+		},
 		"events": {
 			Type:     schema.TypeList,
 			Optional: true,

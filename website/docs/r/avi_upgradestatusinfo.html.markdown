@@ -30,6 +30,7 @@ The following arguments are supported:
 * `after_reboot_rollback_fnc` - (Optional) Backward compatible abort function name. Field introduced in 18.2.10, 20.1.1. Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
 * `after_reboot_task_name` - (Optional) Backward compatible task dict name. Field introduced in 18.2.10, 20.1.1. Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
 * `clean` - (Optional) Flag for clean installation. Field introduced in 18.2.10, 20.1.1. Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+* `dryrun_info` - (Optional) Upgrade dry-run operation details. Field introduced in 31.1.1. Allowed in enterprise edition with any value, enterprise with cloud services edition.
 * `duration` - (Optional) Duration of upgrade operation in seconds. Field introduced in 18.2.6. Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
 * `enable_patch_rollback` - (Optional) Check if the patch rollback is possible on this node. Field introduced in 18.2.6. Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
 * `enable_rollback` - (Optional) Check if the rollback is possible on this node. Field introduced in 18.2.6. Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
@@ -73,7 +74,7 @@ The following arguments are supported:
 * `tenant_ref` - (Optional) Tenant that this object belongs to. It is a reference to an object of type tenant. Field introduced in 18.2.6. Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
 * `total_tasks` - (Optional) Total number of tasks in the upgrade operation. Field introduced in 18.2.6. Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
 * `upgrade_events` - (Optional) Events performed for upgrade operation. Field introduced in 18.2.6. Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-* `upgrade_ops` - (Optional) Upgrade operations requested. Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME, EVAL_UPGRADE, EVAL_PATCH, EVAL_ROLLBACK, EVAL_ROLLBACKPATCH, EVAL_SEGROUP_RESUME, EVAL_RESTORE, RESTORE. Field introduced in 18.2.6. Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+* `upgrade_ops` - (Optional) Upgrade operations requested. Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME, EVAL_UPGRADE, EVAL_PATCH, EVAL_ROLLBACK, EVAL_ROLLBACKPATCH, EVAL_SEGROUP_RESUME, EVAL_RESTORE, RESTORE, UPGRADE_DRYRUN. Field introduced in 18.2.6. Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
 * `upgrade_readiness` - (Optional) Upgrade readiness check execution detail. Field introduced in 22.1.3. Allowed in enterprise edition with any value, enterprise with cloud services edition.
 * `version` - (Optional) Current base image applied to this node. Field introduced in 18.2.6. Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
 
