@@ -6,14 +6,15 @@ package avi
 import (
 	"encoding/json"
 	"errors"
-	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
-	"github.com/vmware/alb-sdk/go/clients"
-	"github.com/vmware/alb-sdk/go/models"
 	"log"
 	"os"
 	"strconv"
 	"strings"
 	"time"
+
+	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
+	"github.com/vmware/alb-sdk/go/clients"
+	"github.com/vmware/alb-sdk/go/models"
 )
 
 func ResourceCloudSchema() map[string]*schema.Schema {
@@ -341,7 +342,7 @@ func setupVcenterMgmtNetwork(d *schema.ResourceData, meta interface{}) error {
 	}
 	uuid := d.Get("uuid").(string)
 	if ok := strings.Contains(mgmtNetwork, "api/"); !ok {
-		mgmtNetwork = "vimgrruntime?name=" + mgmtNetwork
+		mgmtNetwork = "vimgrnwruntime?name=" + mgmtNetwork
 		vcenterConfig.(*schema.Set).List()[0].(map[string]interface{})["management_network"] = mgmtNetwork
 		if err := d.Set("vcenter_configuration", vcenterConfig); err != nil {
 			return err
