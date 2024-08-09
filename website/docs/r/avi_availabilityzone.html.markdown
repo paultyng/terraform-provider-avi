@@ -28,10 +28,12 @@ resource "avi_availabilityzone" "foo" {
 The following arguments are supported:
 
 * `name` - (Required) Availabilty zone where vcenter list belongs to. Field introduced in 20.1.1. Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-* `vcenter_refs` - (Required) Group of vcenter list belong to availabilty zone. It is a reference to an object of type vcenterserver. Field introduced in 20.1.1. Minimum of 1 items required. Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+* `az_datastore` - (Optional) Datastores associated with the az. Field introduced in 31.1.1. Allowed in enterprise edition with any value, enterprise with cloud services edition.
 * `cloud_ref` - (Optional) Availability zone belongs to cloud. It is a reference to an object of type cloud. Field introduced in 20.1.1. Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+* `cluster_ids` - (Optional) List of managed object ids of clusters belong to this az. Field introduced in 31.1.1. Allowed in enterprise edition with any value, enterprise with cloud services edition.
 * `configpb_attributes` - (Optional) Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services edition.
 * `tenant_ref` - (Optional) Availabilityzone belongs to tenant. It is a reference to an object of type tenant. Field introduced in 20.1.1. Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+* `vcenter_ref` - (Optional) Vcenter belongs to the az. It is a reference to an object of type vcenterserver. Field introduced in 31.1.1. Allowed in enterprise edition with any value, enterprise with cloud services edition.
 
 
 ### Timeouts
