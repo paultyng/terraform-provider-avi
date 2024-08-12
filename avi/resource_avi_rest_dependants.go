@@ -9136,6 +9136,12 @@ func ResourceDebugServiceEngineSchema() *schema.Resource {
 				Optional: true,
 				Default:  "VM name unknown",
 			},
+			"objsync": {
+				Type:     schema.TypeSet,
+				Optional: true,
+				Computed: true,
+				Elem:     ResourceDebugServiceEngineObjSyncSchema(),
+			},
 			"seagent_debug": {
 				Type:     schema.TypeList,
 				Optional: true,
@@ -9162,6 +9168,19 @@ func ResourceDebugServiceEngineSchema() *schema.Resource {
 				Type:     schema.TypeString,
 				Optional: true,
 				Computed: true,
+			},
+		},
+	}
+}
+
+func ResourceDebugServiceEngineObjSyncSchema() *schema.Resource {
+	return &schema.Resource{
+		Schema: map[string]*schema.Schema{
+			"publish_packet_drops": {
+				Type:         schema.TypeString,
+				Optional:     true,
+				Computed:     true,
+				ValidateFunc: validateInteger,
 			},
 		},
 	}
