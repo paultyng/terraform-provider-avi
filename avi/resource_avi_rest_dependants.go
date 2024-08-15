@@ -9176,6 +9176,11 @@ func ResourceDebugServiceEngineSchema() *schema.Resource {
 func ResourceDebugServiceEngineObjSyncSchema() *schema.Resource {
 	return &schema.Resource{
 		Schema: map[string]*schema.Schema{
+			"log_level": {
+				Type:     schema.TypeString,
+				Optional: true,
+				Default:  "LOG_LVL_INFO",
+			},
 			"publish_packet_drops": {
 				Type:         schema.TypeString,
 				Optional:     true,
@@ -23358,6 +23363,12 @@ func ResourceNsxtConfigurationSchema() *schema.Resource {
 				Optional: true,
 				Default:  "default",
 			},
+			"verify_certificate": {
+				Type:         schema.TypeString,
+				Optional:     true,
+				Default:      "false",
+				ValidateFunc: validateBool,
+			},
 			"vmc_mode": {
 				Type:         schema.TypeString,
 				Optional:     true,
@@ -34675,6 +34686,24 @@ func ResourceSupportedMigrationsSchema() *schema.Resource {
 				Default:      "128",
 				ValidateFunc: validateInteger,
 			},
+			"dryrun_min_cores": {
+				Type:         schema.TypeString,
+				Optional:     true,
+				Default:      "1",
+				ValidateFunc: validateInteger,
+			},
+			"dryrun_min_free_disk_size": {
+				Type:         schema.TypeString,
+				Optional:     true,
+				Default:      "18",
+				ValidateFunc: validateInteger,
+			},
+			"dryrun_min_memory": {
+				Type:         schema.TypeString,
+				Optional:     true,
+				Default:      "1",
+				ValidateFunc: validateFloat,
+			},
 			"max_active_versions": {
 				Type:         schema.TypeString,
 				Optional:     true,
@@ -42162,6 +42191,12 @@ func ResourcevCenterConfigurationSchema() *schema.Resource {
 				Type:     schema.TypeString,
 				Optional: true,
 				Computed: true,
+			},
+			"verify_certificate": {
+				Type:         schema.TypeString,
+				Optional:     true,
+				Default:      "false",
+				ValidateFunc: validateBool,
 			},
 		},
 	}
