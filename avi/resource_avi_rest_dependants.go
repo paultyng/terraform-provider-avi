@@ -19101,11 +19101,6 @@ func ResourceIpamDnsInfobloxProfileSchema() *schema.Resource {
 				Sensitive:        true,
 				DiffSuppressFunc: suppressSensitiveFieldDiffs,
 			},
-			"profile_url": {
-				Type:     schema.TypeString,
-				Optional: true,
-				Computed: true,
-			},
 			"usable_alloc_subnets": {
 				Type:     schema.TypeList,
 				Optional: true,
