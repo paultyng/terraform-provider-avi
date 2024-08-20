@@ -33077,6 +33077,11 @@ func ResourceServerSchema() *schema.Resource {
 				Optional: true,
 				Computed: true,
 			},
+			"health_monitor_refs": {
+				Type:     schema.TypeList,
+				Optional: true,
+				Elem:     &schema.Schema{Type: schema.TypeString},
+			},
 			"hostname": {
 				Type:     schema.TypeString,
 				Optional: true,
