@@ -323,4 +323,5 @@ In addition to all arguments above, the following attributes are exported:
 * `vss_placement_enabled` - If set, virtual services will be placed on only a subset of the cores of an se. Field introduced in 18.1.1. Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
 * `waf_mempool` - Enable memory pool for waf.requires se reboot. Field introduced in 17.2.3. Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
 * `waf_mempool_size` - Memory pool size used for waf.requires se reboot. Field introduced in 17.2.3. Unit is kb. Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+* `waf_use_jit_for_pcre` - Use the jit compiler for pcre regular expressions in waf. Setting this to false will impact performance. Field introduced in 31.1.1. Allowed in enterprise edition with any value, enterprise with cloud services edition.
 

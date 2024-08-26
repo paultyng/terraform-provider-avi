@@ -1704,6 +1704,12 @@ func ResourceServiceEngineGroupSchema() map[string]*schema.Schema {
 			Default:      "64",
 			ValidateFunc: validateInteger,
 		},
+		"waf_use_jit_for_pcre": {
+			Type:         schema.TypeString,
+			Optional:     true,
+			Default:      "true",
+			ValidateFunc: validateBool,
+		},
 	}
 }
 

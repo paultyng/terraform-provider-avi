@@ -1200,6 +1200,10 @@ func dataSourceAviServiceEngineGroup() *schema.Resource {
 				Type:     schema.TypeString,
 				Computed: true,
 			},
+			"waf_use_jit_for_pcre": {
+				Type:     schema.TypeString,
+				Computed: true,
+			},
 		},
 	}
 }
