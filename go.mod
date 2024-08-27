@@ -1,6 +1,8 @@
 module github.com/vmware/terraform-provider-avi
 
-go 1.22.6
+go 1.22
+
+toolchain go1.22.6
 
 require (
 	github.com/hashicorp/terraform-plugin-sdk/v2 v2.20.0
