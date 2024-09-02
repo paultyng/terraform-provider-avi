@@ -32,6 +32,7 @@ The following arguments are supported:
 * `app_cookie_persistence_profile` - (Optional) Specifies the application cookie persistence profile parameters. Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
 * `configpb_attributes` - (Optional) Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services edition.
 * `description` - (Optional) Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+* `diameter_app_cookie_persistence_profile` - (Optional) Specifies the diameter persistence profile parameters. Field introduced in 31.1.1. Allowed in enterprise edition with any value, enterprise with cloud services edition.
 * `hdr_persistence_profile` - (Optional) Specifies the custom http header persistence profile parameters. Allowed in enterprise edition with any value, enterprise with cloud services edition.
 * `http_cookie_persistence_profile` - (Optional) Specifies the http cookie persistence profile parameters. Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
 * `ip_persistence_profile` - (Optional) Specifies the client ip persistence profile parameters. Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.

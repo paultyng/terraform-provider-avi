@@ -40,6 +40,10 @@ func dataSourceAviSystemReport() *schema.Resource {
 				Optional: true,
 				Computed: true,
 			},
+			"operation": {
+				Type:     schema.TypeString,
+				Computed: true,
+			},
 			"readiness_reports": {
 				Type:     schema.TypeList,
 				Computed: true,
@@ -67,6 +71,10 @@ func dataSourceAviSystemReport() *schema.Resource {
 			"tenant_ref": {
 				Type:     schema.TypeString,
 				Optional: true,
+				Computed: true,
+			},
+			"type": {
+				Type:     schema.TypeString,
 				Computed: true,
 			},
 			"uuid": {

@@ -7058,6 +7058,12 @@ func ResourceConnectionLogSchema() *schema.Resource {
 				Required:     true,
 				ValidateFunc: validateBool,
 			},
+			"diameter_log": {
+				Type:     schema.TypeSet,
+				Optional: true,
+				Computed: true,
+				Elem:     ResourceDiameterLogSchema(),
+			},
 			"dns_etype": {
 				Type:     schema.TypeString,
 				Optional: true,
@@ -9493,6 +9499,125 @@ func ResourceDetachIpStatusEventDetailsSchema() *schema.Resource {
 				Computed: true,
 			},
 			"vs_name": {
+				Type:     schema.TypeString,
+				Optional: true,
+				Computed: true,
+			},
+		},
+	}
+}
+
+func ResourceDiameterAVPPersistenceProfileSchema() *schema.Resource {
+	return &schema.Resource{
+		Schema: map[string]*schema.Schema{
+			"avp_key_type": {
+				Type:     schema.TypeString,
+				Optional: true,
+				Default:  "SESSION_ID",
+			},
+			"timeout": {
+				Type:         schema.TypeString,
+				Optional:     true,
+				Computed:     true,
+				ValidateFunc: validateInteger,
+			},
+		},
+	}
+}
+
+func ResourceDiameterLogSchema() *schema.Resource {
+	return &schema.Resource{
+		Schema: map[string]*schema.Schema{
+			"application_id": {
+				Type:         schema.TypeString,
+				Optional:     true,
+				Computed:     true,
+				ValidateFunc: validateInteger,
+			},
+			"avp_key_type": {
+				Type:     schema.TypeString,
+				Optional: true,
+				Computed: true,
+			},
+			"command_code": {
+				Type:         schema.TypeString,
+				Optional:     true,
+				Computed:     true,
+				ValidateFunc: validateInteger,
+			},
+			"destination_host": {
+				Type:     schema.TypeString,
+				Optional: true,
+				Computed: true,
+			},
+			"destination_realm": {
+				Type:     schema.TypeString,
+				Optional: true,
+				Computed: true,
+			},
+			"end_to_end_identifier": {
+				Type:         schema.TypeString,
+				Optional:     true,
+				Computed:     true,
+				ValidateFunc: validateInteger,
+			},
+			"hop_by_hop_identifier": {
+				Type:         schema.TypeString,
+				Optional:     true,
+				Computed:     true,
+				ValidateFunc: validateInteger,
+			},
+			"origin_host": {
+				Type:     schema.TypeString,
+				Optional: true,
+				Computed: true,
+			},
+			"origin_realm": {
+				Type:     schema.TypeString,
+				Optional: true,
+				Computed: true,
+			},
+		},
+	}
+}
+
+func ResourceDiameterServiceApplicationProfileSchema() *schema.Resource {
+	return &schema.Resource{
+		Schema: map[string]*schema.Schema{
+			"client_origin_host": {
+				Type:     schema.TypeString,
+				Optional: true,
+				Computed: true,
+			},
+			"client_origin_realm": {
+				Type:     schema.TypeString,
+				Optional: true,
+				Computed: true,
+			},
+			"host_ip_addr_rewrite": {
+				Type:         schema.TypeString,
+				Optional:     true,
+				Default:      "false",
+				ValidateFunc: validateBool,
+			},
+			"max_outstanding_req": {
+				Type:         schema.TypeString,
+				Optional:     true,
+				Default:      "4098",
+				ValidateFunc: validateInteger,
+			},
+			"req_timeout": {
+				Type:         schema.TypeString,
+				Optional:     true,
+				Default:      "5",
+				ValidateFunc: validateInteger,
+			},
+			"server_origin_host": {
+				Type:     schema.TypeString,
+				Optional: true,
+				Computed: true,
+			},
+			"server_origin_realm": {
 				Type:     schema.TypeString,
 				Optional: true,
 				Computed: true,
@@ -12775,6 +12900,12 @@ func ResourceEventDetailsSchema() *schema.Resource {
 				Optional: true,
 				Computed: true,
 				Elem:     ResourceVsSwitchoverEventDetailsSchema(),
+			},
+			"warning_event_details": {
+				Type:     schema.TypeSet,
+				Optional: true,
+				Computed: true,
+				Elem:     ResourceWarningEventDetailsSchema(),
 			},
 		},
 	}
@@ -17296,6 +17427,11 @@ func ResourceHdrMatchSchema() *schema.Resource {
 				Type:     schema.TypeString,
 				Required: true,
 			},
+			"string_group_refs": {
+				Type:     schema.TypeList,
+				Optional: true,
+				Elem:     &schema.Schema{Type: schema.TypeString},
+			},
 			"value": {
 				Type:     schema.TypeList,
 				Optional: true,
@@ -17621,6 +17757,12 @@ func ResourceHealthMonitorSSLAttributesSchema() *schema.Resource {
 			"ssl_profile_ref": {
 				Type:     schema.TypeString,
 				Required: true,
+			},
+			"use_pool_sni_server_name": {
+				Type:         schema.TypeString,
+				Optional:     true,
+				Default:      "false",
+				ValidateFunc: validateBool,
 			},
 		},
 	}
@@ -33498,6 +33640,12 @@ func ResourceServiceSchema() *schema.Resource {
 				Default:      "false",
 				ValidateFunc: validateBool,
 			},
+			"is_passive_ftp_data_port": {
+				Type:         schema.TypeString,
+				Optional:     true,
+				Default:      "false",
+				ValidateFunc: validateBool,
+			},
 			"override_application_profile_ref": {
 				Type:     schema.TypeString,
 				Optional: true,
@@ -41145,6 +41293,12 @@ func ResourceWafConfigSchema() *schema.Resource {
 				Default:      "32",
 				ValidateFunc: validateInteger,
 			},
+			"collect_cpu_usage_metrics_per_waf_rule": {
+				Type:         schema.TypeString,
+				Optional:     true,
+				Default:      "false",
+				ValidateFunc: validateBool,
+			},
 			"content_type_mappings": {
 				Type:     schema.TypeList,
 				Optional: true,
@@ -42035,6 +42189,23 @@ func ResourceWafRuleOverridesSchema() *schema.Resource {
 func ResourceWafWhitelistLogSchema() *schema.Resource {
 	return &schema.Resource{
 		Schema: map[string]*schema.Schema{},
+	}
+}
+
+func ResourceWarningEventDetailsSchema() *schema.Resource {
+	return &schema.Resource{
+		Schema: map[string]*schema.Schema{
+			"event_data": {
+				Type:     schema.TypeString,
+				Optional: true,
+				Computed: true,
+			},
+			"warning_message": {
+				Type:     schema.TypeString,
+				Optional: true,
+				Computed: true,
+			},
+		},
 	}
 }
 

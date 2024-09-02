@@ -39,11 +39,13 @@ In addition to all arguments above, the following attributes are exported:
 * `events` - List of events associated with the report. Field introduced in 22.1.6, 30.2.1. Allowed in enterprise edition with any value, enterprise with cloud services edition.
 * `image_ref` - System image associated with the report. It is a reference to an object of type image. Field introduced in 22.1.6, 30.2.1. Allowed in enterprise edition with any value, enterprise with cloud services edition.
 * `name` - Name of the report derived from operation in a readable format. Ex  upgrade_system_1a5c. Field introduced in 22.1.6, 30.2.1. Allowed in enterprise edition with any value, enterprise with cloud services edition.
+* `operation` - Nature of operation. Ex  controller upgrade, system patch, etc. Field introduced in 31.1.1. Allowed in enterprise edition with any value, enterprise with cloud services edition.
 * `readiness_reports` - Readiness state of the system. Ex  upgrade pre-check results. Field introduced in 22.1.6, 30.2.1. Allowed in enterprise edition with any value, enterprise with cloud services edition.
 * `se_patch_image_ref` - Se patch image associated with the report. It is a reference to an object of type image. Field introduced in 22.1.6, 30.2.1. Allowed in enterprise edition with any value, enterprise with cloud services edition.
 * `state` - Report state combines all applicable states. Ex  readiness_reports.system_readiness.state. Field introduced in 22.1.6, 30.2.1. Allowed in enterprise edition with any value, enterprise with cloud services edition.
 * `summary` - Summary of the report. Field introduced in 22.1.6, 30.2.1. Allowed in enterprise edition with any value, enterprise with cloud services edition.
 * `tasks` - List of tasks associated with the report. Field introduced in 30.2.1. Allowed in enterprise edition with any value, enterprise with cloud services edition.
 * `tenant_ref` - Tenant uuid associated with the object. It is a reference to an object of type tenant. Field introduced in 22.1.6, 30.2.1. Allowed in enterprise edition with any value, enterprise with cloud services edition.
+* `type` - Type of report. Pre-checks, dry-run or an upgrade operation. Field introduced in 31.1.1. Allowed in enterprise edition with any value, enterprise with cloud services edition.
 * `uuid` - Uuid identifier for the report. Field introduced in 22.1.6, 30.2.1. Allowed in enterprise edition with any value, enterprise with cloud services edition.
 

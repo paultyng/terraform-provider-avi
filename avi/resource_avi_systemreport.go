@@ -47,6 +47,11 @@ func ResourceSystemReportSchema() map[string]*schema.Schema {
 			Optional: true,
 			Computed: true,
 		},
+		"operation": {
+			Type:     schema.TypeString,
+			Optional: true,
+			Computed: true,
+		},
 		"readiness_reports": {
 			Type:     schema.TypeList,
 			Optional: true,
@@ -75,6 +80,11 @@ func ResourceSystemReportSchema() map[string]*schema.Schema {
 			Elem:     ResourceReportTaskSchema(),
 		},
 		"tenant_ref": {
+			Type:     schema.TypeString,
+			Optional: true,
+			Computed: true,
+		},
+		"type": {
 			Type:     schema.TypeString,
 			Optional: true,
 			Computed: true,
