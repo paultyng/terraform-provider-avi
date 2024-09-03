@@ -17582,12 +17582,27 @@ func ResourceHealthMonitorHttpSchema() *schema.Resource {
 				Default:      "false",
 				ValidateFunc: validateBool,
 			},
+			"http_headers": {
+				Type:     schema.TypeList,
+				Optional: true,
+				Elem:     &schema.Schema{Type: schema.TypeString},
+			},
+			"http_method": {
+				Type:     schema.TypeString,
+				Optional: true,
+				Computed: true,
+			},
 			"http_request": {
 				Type:     schema.TypeString,
 				Optional: true,
 				Default:  "GET / HTTP/1.0",
 			},
 			"http_request_body": {
+				Type:     schema.TypeString,
+				Optional: true,
+				Computed: true,
+			},
+			"http_request_header_path": {
 				Type:     schema.TypeString,
 				Optional: true,
 				Computed: true,
