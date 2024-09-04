@@ -192,12 +192,6 @@ func ResourceCloudSchema() map[string]*schema.Schema {
 			Optional: true,
 			Computed: true,
 		},
-		"openstack_configuration": {
-			Type:     schema.TypeSet,
-			Optional: true,
-			Computed: true,
-			Elem:     ResourceOpenStackConfigurationSchema(),
-		},
 		"prefer_static_routes": {
 			Type:         schema.TypeString,
 			Optional:     true,
