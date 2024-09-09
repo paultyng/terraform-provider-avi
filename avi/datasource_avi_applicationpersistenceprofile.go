@@ -23,7 +23,7 @@ func dataSourceAviApplicationPersistenceProfile() *schema.Resource {
 				Type:     schema.TypeString,
 				Computed: true,
 			},
-			"diameter_app_cookie_persistence_profile": {
+			"diameter_app_persistence_profile": {
 				Type:     schema.TypeSet,
 				Computed: true,
 				Elem:     ResourceDiameterAVPPersistenceProfileSchema(),

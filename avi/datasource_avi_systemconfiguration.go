@@ -113,6 +113,10 @@ func dataSourceAviSystemConfiguration() *schema.Resource {
 				Type:     schema.TypeString,
 				Computed: true,
 			},
+			"sddcmanager_fqdn": {
+				Type:     schema.TypeString,
+				Computed: true,
+			},
 			"secure_channel_configuration": {
 				Type:     schema.TypeSet,
 				Computed: true,

@@ -28,6 +28,7 @@ resource "avi_webapput" "foo" {
 The following arguments are supported:
 
 * `name` - (Required) Name of the webapput object-level0. Field introduced in 21.1.5, 22.1.1. Allowed in enterprise edition with any value, enterprise with cloud services edition.
+* `cloud_ref` - (Optional) Cloud of the webapput object-level0. It is a reference to an object of type cloud. Field introduced in 30.2.2. Allowed in enterprise edition with any value, enterprise with cloud services edition.
 * `configpb_attributes` - (Optional) Protobuf versioning for config pbs. Field introduced in 21.1.5, 22.1.1. Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services edition.
 * `default_first_int` - (Optional) Default uint64 field. Field introduced in 30.1.2. Allowed in enterprise edition with any value, enterprise with cloud services edition.
 * `default_second_int` - (Optional) Default int64 field. Field introduced in 30.1.2. Allowed in enterprise edition with any value, enterprise with cloud services edition.

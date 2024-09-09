@@ -142,6 +142,11 @@ func ResourceSystemConfigurationSchema() map[string]*schema.Schema {
 			Optional: true,
 			Default:  "default",
 		},
+		"sddcmanager_fqdn": {
+			Type:     schema.TypeString,
+			Optional: true,
+			Computed: true,
+		},
 		"secure_channel_configuration": {
 			Type:     schema.TypeSet,
 			Optional: true,

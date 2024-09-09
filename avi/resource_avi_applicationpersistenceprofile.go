@@ -27,7 +27,7 @@ func ResourceApplicationPersistenceProfileSchema() map[string]*schema.Schema {
 			Optional: true,
 			Computed: true,
 		},
-		"diameter_app_cookie_persistence_profile": {
+		"diameter_app_persistence_profile": {
 			Type:     schema.TypeSet,
 			Optional: true,
 			Computed: true,
