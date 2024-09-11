@@ -1,5 +1,5 @@
 ## 31.1.1 (Unreleased)
-## 30.2.1 (Unreleased)
+## 30.2.2
 ENHANCEMENTS:
 - Added new resource `avi_controllerportalregistration` [#553](https://github.com/vmware/terraform-provider-avi/pull/553)
 - Added new resource `avi_serviceauthprofile` [#553](https://github.com/vmware/terraform-provider-avi/pull/553)

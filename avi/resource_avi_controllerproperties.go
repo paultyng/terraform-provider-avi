@@ -4,9 +4,8 @@
 package avi
 
 import (
-	"log"
-
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
+	"log"
 )
 
 func ResourceControllerPropertiesSchema() map[string]*schema.Schema {
@@ -14,7 +13,7 @@ func ResourceControllerPropertiesSchema() map[string]*schema.Schema {
 		"alert_manager_use_evms": {
 			Type:         schema.TypeString,
 			Optional:     true,
-			Default:      "false",
+			Default:      "true",
 			ValidateFunc: validateBool,
 		},
 		"allow_admin_network_updates": {
