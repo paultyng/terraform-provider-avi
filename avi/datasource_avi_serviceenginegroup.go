@@ -273,6 +273,10 @@ func dataSourceAviServiceEngineGroup() *schema.Resource {
 				Type:     schema.TypeString,
 				Computed: true,
 			},
+			"enable_qat": {
+				Type:     schema.TypeString,
+				Computed: true,
+			},
 			"ephemeral_portrange_end": {
 				Type:     schema.TypeString,
 				Computed: true,
