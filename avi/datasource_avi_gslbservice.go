@@ -92,7 +92,15 @@ func dataSourceAviGslbService() *schema.Resource {
 				Type:     schema.TypeString,
 				Computed: true,
 			},
+			"record_type": {
+				Type:     schema.TypeString,
+				Computed: true,
+			},
 			"resolve_cname": {
+				Type:     schema.TypeString,
+				Computed: true,
+			},
+			"resolve_srv": {
 				Type:     schema.TypeString,
 				Computed: true,
 			},

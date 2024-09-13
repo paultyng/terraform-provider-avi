@@ -996,6 +996,12 @@ func ResourceServiceEngineGroupSchema() map[string]*schema.Schema {
 			Optional: true,
 			Default:  "PLACEMENT_MODE_AUTO",
 		},
+		"pre_upgrade_se_available_mem_threshold": {
+			Type:         schema.TypeString,
+			Optional:     true,
+			Default:      "0",
+			ValidateFunc: validateInteger,
+		},
 		"realtime_se_metrics": {
 			Type:     schema.TypeSet,
 			Optional: true,

@@ -129,6 +129,12 @@ func ResourceAviPoolServerSchema() map[string]*schema.Schema {
 			Optional: true,
 			Computed: true,
 		},
+		"srv_rdata": {
+			Type:     schema.TypeSet,
+			Optional: true,
+			Computed: true,
+			Elem:     ResourceGslbServiceSrvRdataSchema(),
+		},
 		"static": {
 			Type:         schema.TypeString,
 			Optional:     true,

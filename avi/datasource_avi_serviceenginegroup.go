@@ -703,6 +703,10 @@ func dataSourceAviServiceEngineGroup() *schema.Resource {
 				Type:     schema.TypeString,
 				Computed: true,
 			},
+			"pre_upgrade_se_available_mem_threshold": {
+				Type:     schema.TypeString,
+				Computed: true,
+			},
 			"realtime_se_metrics": {
 				Type:     schema.TypeSet,
 				Computed: true,

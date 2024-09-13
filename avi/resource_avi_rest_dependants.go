@@ -14637,6 +14637,12 @@ func ResourceGslbPoolMemberSchema() *schema.Resource {
 				Default:      "false",
 				ValidateFunc: validateBool,
 			},
+			"srv_rdata": {
+				Type:     schema.TypeSet,
+				Optional: true,
+				Computed: true,
+				Elem:     ResourceGslbServiceSrvRdataSchema(),
+			},
 			"vs_uuid": {
 				Type:     schema.TypeString,
 				Optional: true,
@@ -15043,6 +15049,28 @@ func ResourceGslbServiceSitePersistencePoolSchema() *schema.Resource {
 				Type:     schema.TypeString,
 				Optional: true,
 				Computed: true,
+			},
+		},
+	}
+}
+
+func ResourceGslbServiceSrvRdataSchema() *schema.Resource {
+	return &schema.Resource{
+		Schema: map[string]*schema.Schema{
+			"port": {
+				Type:         schema.TypeString,
+				Required:     true,
+				ValidateFunc: validateInteger,
+			},
+			"priority": {
+				Type:         schema.TypeString,
+				Required:     true,
+				ValidateFunc: validateInteger,
+			},
+			"weight": {
+				Type:         schema.TypeString,
+				Required:     true,
+				ValidateFunc: validateInteger,
 			},
 		},
 	}
@@ -21616,6 +21644,12 @@ func ResourceMemoryBalancerInfoSchema() *schema.Resource {
 func ResourceMemoryUsageSchema() *schema.Resource {
 	return &schema.Resource{
 		Schema: map[string]*schema.Schema{
+			"available": {
+				Type:         schema.TypeString,
+				Optional:     true,
+				Computed:     true,
+				ValidateFunc: validateInteger,
+			},
 			"free": {
 				Type:         schema.TypeString,
 				Optional:     true,
@@ -33416,6 +33450,12 @@ func ResourceServerSchema() *schema.Resource {
 				Type:     schema.TypeString,
 				Optional: true,
 				Computed: true,
+			},
+			"srv_rdata": {
+				Type:     schema.TypeSet,
+				Optional: true,
+				Computed: true,
+				Elem:     ResourceGslbServiceSrvRdataSchema(),
 			},
 			"static": {
 				Type:         schema.TypeString,

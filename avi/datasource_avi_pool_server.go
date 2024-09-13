@@ -100,6 +100,11 @@ func dataSourceAviServer() *schema.Resource {
 				Type:     schema.TypeString,
 				Computed: true,
 			},
+			"srv_rdata": {
+				Type:     schema.TypeSet,
+				Computed: true,
+				Elem:     ResourceGslbServiceSrvRdataSchema(),
+			},
 			"static": {
 				Type:     schema.TypeString,
 				Computed: true,

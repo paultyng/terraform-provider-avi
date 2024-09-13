@@ -112,10 +112,21 @@ func ResourceGslbServiceSchema() map[string]*schema.Schema {
 			Optional: true,
 			Default:  "GSLB_SERVICE_ALGORITHM_PRIORITY",
 		},
+		"record_type": {
+			Type:     schema.TypeString,
+			Optional: true,
+			Default:  "GSLB_SERVICE_RECORD_TYPE_A_AAAA_CNAME",
+		},
 		"resolve_cname": {
 			Type:         schema.TypeString,
 			Optional:     true,
 			Default:      "false",
+			ValidateFunc: validateBool,
+		},
+		"resolve_srv": {
+			Type:         schema.TypeString,
+			Optional:     true,
+			Computed:     true,
 			ValidateFunc: validateBool,
 		},
 		"site_persistence_enabled": {
