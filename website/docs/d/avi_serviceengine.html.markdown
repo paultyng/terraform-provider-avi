@@ -41,7 +41,7 @@ In addition to all arguments above, the following attributes are exported:
 * `controller_created` - Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
 * `controller_ip` - Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
 * `data_vnics` - Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-* `enable_state` - Inorder to disable se set this field appropriately. Enum options - SE_STATE_ENABLED, SE_STATE_DISABLED_FOR_PLACEMENT, SE_STATE_DISABLED, SE_STATE_DISABLED_FORCE. Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+* `enable_state` - Inorder to disable se set this field appropriately. Enum options - SE_STATE_ENABLED, SE_STATE_DISABLED_FOR_PLACEMENT, SE_STATE_DISABLED, SE_STATE_DISABLED_FORCE, SE_STATE_DISABLED_WITH_SCALEIN, SE_STATE_DISABLED_NO_TRAFFIC, SE_STATE_DISABLED_FORCE_WITH_MIGRATE. Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
 * `flavor` - Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
 * `host_ref` - It is a reference to an object of type vimgrhostruntime. Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
 * `hypervisor` - Enum options - default, vmware_esx, kvm, vmware_vsan, xen. Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.

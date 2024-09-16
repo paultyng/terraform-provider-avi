@@ -48,6 +48,10 @@ func dataSourceAviGslb() *schema.Resource {
 				Type:     schema.TypeString,
 				Computed: true,
 			},
+			"gs_member_fqdn_resolution_on_se": {
+				Type:     schema.TypeString,
+				Computed: true,
+			},
 			"is_federated": {
 				Type:     schema.TypeString,
 				Computed: true,

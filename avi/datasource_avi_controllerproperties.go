@@ -343,6 +343,10 @@ func dataSourceAviControllerProperties() *schema.Resource {
 				Type:     schema.TypeString,
 				Computed: true,
 			},
+			"skip_beego_perf_collection": {
+				Type:     schema.TypeString,
+				Computed: true,
+			},
 			"soft_min_mem_per_se_limit": {
 				Type:     schema.TypeString,
 				Computed: true,

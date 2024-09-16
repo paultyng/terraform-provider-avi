@@ -130,6 +130,10 @@ func dataSourceAviGslbService() *schema.Resource {
 				Optional: true,
 				Computed: true,
 			},
+			"vrf_uuid_for_gs": {
+				Type:     schema.TypeString,
+				Computed: true,
+			},
 			"wildcard_match": {
 				Type:     schema.TypeString,
 				Computed: true,

@@ -62,6 +62,12 @@ func ResourceGslbSchema() map[string]*schema.Schema {
 			Default:      "3",
 			ValidateFunc: validateInteger,
 		},
+		"gs_member_fqdn_resolution_on_se": {
+			Type:         schema.TypeString,
+			Optional:     true,
+			Computed:     true,
+			ValidateFunc: validateBool,
+		},
 		"is_federated": {
 			Type:         schema.TypeString,
 			Optional:     true,

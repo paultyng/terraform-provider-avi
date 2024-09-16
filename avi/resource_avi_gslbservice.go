@@ -163,6 +163,11 @@ func ResourceGslbServiceSchema() map[string]*schema.Schema {
 			Optional: true,
 			Computed: true,
 		},
+		"vrf_uuid_for_gs": {
+			Type:     schema.TypeString,
+			Optional: true,
+			Computed: true,
+		},
 		"wildcard_match": {
 			Type:         schema.TypeString,
 			Optional:     true,
