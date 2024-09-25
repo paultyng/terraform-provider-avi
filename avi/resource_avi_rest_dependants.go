@@ -469,6 +469,23 @@ func ResourceAWSSetupSchema() *schema.Resource {
 	}
 }
 
+func ResourceAZClusterSchema() *schema.Resource {
+	return &schema.Resource{
+		Schema: map[string]*schema.Schema{
+			"cluster_ids": {
+				Type:     schema.TypeList,
+				Optional: true,
+				Elem:     &schema.Schema{Type: schema.TypeString},
+			},
+			"vcenter_ref": {
+				Type:     schema.TypeString,
+				Optional: true,
+				Computed: true,
+			},
+		},
+	}
+}
+
 func ResourceAZDatastoreSchema() *schema.Resource {
 	return &schema.Resource{
 		Schema: map[string]*schema.Schema{
@@ -35234,6 +35251,12 @@ func ResourceTCPFastPathProfileSchema() *schema.Resource {
 func ResourceTCPProxyProfileSchema() *schema.Resource {
 	return &schema.Resource{
 		Schema: map[string]*schema.Schema{
+			"ack_on_push": {
+				Type:         schema.TypeString,
+				Optional:     true,
+				Default:      "false",
+				ValidateFunc: validateBool,
+			},
 			"aggressive_congestion_avoidance": {
 				Type:         schema.TypeString,
 				Optional:     true,

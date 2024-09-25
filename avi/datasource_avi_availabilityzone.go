@@ -9,6 +9,11 @@ func dataSourceAviAvailabilityZone() *schema.Resource {
 	return &schema.Resource{
 		Read: ResourceAviAvailabilityZoneRead,
 		Schema: map[string]*schema.Schema{
+			"az_clusters": {
+				Type:     schema.TypeList,
+				Computed: true,
+				Elem:     ResourceAZClusterSchema(),
+			},
 			"az_datastore": {
 				Type:     schema.TypeSet,
 				Computed: true,
@@ -18,11 +23,6 @@ func dataSourceAviAvailabilityZone() *schema.Resource {
 				Type:     schema.TypeString,
 				Optional: true,
 				Computed: true,
-			},
-			"cluster_ids": {
-				Type:     schema.TypeList,
-				Computed: true,
-				Elem:     &schema.Schema{Type: schema.TypeString},
 			},
 			"configpb_attributes": {
 				Type:     schema.TypeSet,
@@ -42,10 +42,6 @@ func dataSourceAviAvailabilityZone() *schema.Resource {
 			"uuid": {
 				Type:     schema.TypeString,
 				Optional: true,
-				Computed: true,
-			},
-			"vcenter_ref": {
-				Type:     schema.TypeString,
 				Computed: true,
 			},
 		},

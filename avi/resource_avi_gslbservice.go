@@ -126,7 +126,7 @@ func ResourceGslbServiceSchema() map[string]*schema.Schema {
 		"resolve_srv": {
 			Type:         schema.TypeString,
 			Optional:     true,
-			Computed:     true,
+			Default:      "false",
 			ValidateFunc: validateBool,
 		},
 		"site_persistence_enabled": {

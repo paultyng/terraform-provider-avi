@@ -65,7 +65,7 @@ func ResourceGslbSchema() map[string]*schema.Schema {
 		"gs_member_fqdn_resolution_on_se": {
 			Type:         schema.TypeString,
 			Optional:     true,
-			Computed:     true,
+			Default:      "false",
 			ValidateFunc: validateBool,
 		},
 		"is_federated": {
