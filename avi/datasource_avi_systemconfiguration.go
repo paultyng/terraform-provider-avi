@@ -59,10 +59,6 @@ func dataSourceAviSystemConfiguration() *schema.Resource {
 				Type:     schema.TypeString,
 				Computed: true,
 			},
-			"enable_telemetry": {
-				Type:     schema.TypeString,
-				Computed: true,
-			},
 			"fips_mode": {
 				Type:     schema.TypeString,
 				Computed: true,
@@ -136,6 +132,11 @@ func dataSourceAviSystemConfiguration() *schema.Resource {
 				Type:     schema.TypeList,
 				Computed: true,
 				Elem:     &schema.Schema{Type: schema.TypeString},
+			},
+			"telemetry_configuration": {
+				Type:     schema.TypeSet,
+				Computed: true,
+				Elem:     ResourceTelemetryConfigurationSchema(),
 			},
 			"trusted_host_profiles_refs": {
 				Type:     schema.TypeList,

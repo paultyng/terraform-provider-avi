@@ -35250,6 +35250,25 @@ func ResourceTCPFastPathProfileSchema() *schema.Resource {
 				Default:      "300",
 				ValidateFunc: validateInteger,
 			},
+			"tcp_fastpath_options": {
+				Type:     schema.TypeSet,
+				Optional: true,
+				Computed: true,
+				Elem:     ResourceTCPOptionsSchema(),
+			},
+		},
+	}
+}
+
+func ResourceTCPOptionsSchema() *schema.Resource {
+	return &schema.Resource{
+		Schema: map[string]*schema.Schema{
+			"strip_sack": {
+				Type:         schema.TypeString,
+				Optional:     true,
+				Default:      "false",
+				ValidateFunc: validateBool,
+			},
 		},
 	}
 }
@@ -35552,6 +35571,24 @@ func ResourceTechSupportStatusSchema() *schema.Resource {
 				Type:     schema.TypeList,
 				Optional: true,
 				Elem:     &schema.Schema{Type: schema.TypeString},
+			},
+		},
+	}
+}
+
+func ResourceTelemetryConfigurationSchema() *schema.Resource {
+	return &schema.Resource{
+		Schema: map[string]*schema.Schema{
+			"enable": {
+				Type:         schema.TypeString,
+				Optional:     true,
+				Default:      "true",
+				ValidateFunc: validateBool,
+			},
+			"url": {
+				Type:     schema.TypeString,
+				Optional: true,
+				Computed: true,
 			},
 		},
 	}

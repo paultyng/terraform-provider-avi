@@ -74,12 +74,6 @@ func ResourceSystemConfigurationSchema() map[string]*schema.Schema {
 			Default:      "false",
 			ValidateFunc: validateBool,
 		},
-		"enable_telemetry": {
-			Type:         schema.TypeString,
-			Optional:     true,
-			Default:      "true",
-			ValidateFunc: validateBool,
-		},
 		"fips_mode": {
 			Type:         schema.TypeString,
 			Optional:     true,
@@ -168,6 +162,12 @@ func ResourceSystemConfigurationSchema() map[string]*schema.Schema {
 			Type:     schema.TypeList,
 			Optional: true,
 			Elem:     &schema.Schema{Type: schema.TypeString},
+		},
+		"telemetry_configuration": {
+			Type:     schema.TypeSet,
+			Optional: true,
+			Computed: true,
+			Elem:     ResourceTelemetryConfigurationSchema(),
 		},
 		"trusted_host_profiles_refs": {
 			Type:     schema.TypeList,
