@@ -39,6 +39,8 @@ The following arguments are supported:
 * `failed_checks` - (Optional) Number of continuous failed health checks before the server is marked down. Allowed values are 1-50. Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
 * `ftp_monitor` - (Optional) Health monitor for ftp. Field introduced in 21.1.3. Allowed in enterprise edition with any value, enterprise with cloud services edition.
 * `ftps_monitor` - (Optional) Health monitor for ftps. Field introduced in 21.1.3. Allowed in enterprise edition with any value, enterprise with cloud services edition.
+* `http2_monitor` - (Optional) Health monitor for http2. Field introduced in 31.1.1. Allowed in enterprise edition with any value, enterprise with cloud services edition.
+* `http2s_monitor` - (Optional) Health monitor for http2s. Field introduced in 31.1.1. Allowed in enterprise edition with any value, enterprise with cloud services edition.
 * `http_monitor` - (Optional) Allowed in enterprise edition with any value, basic, enterprise with cloud services edition.
 * `https_monitor` - (Optional) Allowed in enterprise edition with any value, basic, enterprise with cloud services edition.
 * `imap_monitor` - (Optional) Health monitor for imap. Field introduced in 21.1.1. Allowed in enterprise edition with any value, enterprise with cloud services edition.

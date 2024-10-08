@@ -150,6 +150,10 @@ func dataSourceAviControllerProperties() *schema.Resource {
 				Type:     schema.TypeString,
 				Computed: true,
 			},
+			"enable_nsx_streaming_agent": {
+				Type:     schema.TypeString,
+				Computed: true,
+			},
 			"enable_per_process_stop": {
 				Type:     schema.TypeString,
 				Computed: true,
@@ -339,6 +343,10 @@ func dataSourceAviControllerProperties() *schema.Resource {
 				Type:     schema.TypeString,
 				Computed: true,
 			},
+			"skip_beego_perf_collection": {
+				Type:     schema.TypeString,
+				Computed: true,
+			},
 			"soft_min_mem_per_se_limit": {
 				Type:     schema.TypeString,
 				Computed: true,
@@ -347,6 +355,11 @@ func dataSourceAviControllerProperties() *schema.Resource {
 				Type:     schema.TypeList,
 				Computed: true,
 				Elem:     &schema.Schema{Type: schema.TypeInt},
+			},
+			"statecache_properties": {
+				Type:     schema.TypeSet,
+				Computed: true,
+				Elem:     ResourceSCPropertiesSchema(),
 			},
 			"system_report_cleanup_interval": {
 				Type:     schema.TypeString,

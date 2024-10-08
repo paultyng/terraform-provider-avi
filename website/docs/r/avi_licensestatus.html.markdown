@@ -28,7 +28,7 @@ resource "avi_licensestatus" "foo" {
 The following arguments are supported:
 
 * `configpb_attributes` - (Optional) Protobuf versioning for config pbs. Field introduced in 21.1.3. Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services edition.
-* `essentials_enforced_at` - (Optional) License enforcement date when we upgrade controller to 31.1.1 and license tier is essential before upgrade. Field introduced in 31.1.1. Allowed in enterprise edition with any value, enterprise with cloud services edition.
+* `essentials_enforced_at` - (Optional) License enforcement date when we upgrade controller to higher version and license tier is essential before upgrade. Field introduced in 31.1.1. Allowed in enterprise edition with any value, enterprise with cloud services edition.
 * `saas_status` - (Optional) Saas licensing status. Field introduced in 21.1.3. Allowed in enterprise edition with any value, enterprise with cloud services edition.
 * `service_update` - (Optional) Pulse license service update. Field introduced in 21.1.4. Allowed in enterprise edition with any value, enterprise with cloud services edition.
 * `tenant_uuid` - (Optional) Tenant uuid. Field introduced in 30.1.1. Allowed in enterprise edition with any value, enterprise with cloud services edition.

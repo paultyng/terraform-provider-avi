@@ -46,7 +46,7 @@ In addition to all arguments above, the following attributes are exported:
 * `restrict_download` - Flag to allow/restrict download of the file. Field introduced in 20.1.1. Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
 * `size` - Size of the file. Field introduced in 20.1.1. Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
 * `tenant_ref` - Tenant that this object belongs to. It is a reference to an object of type tenant. Field introduced in 20.1.1. Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-* `type` - Type of the file. Enum options - OTHER_FILE_TYPES, IP_REPUTATION, GEO_DB, TECH_SUPPORT, HSMPACKAGES, IPAMDNSSCRIPTS, CONTROLLER_IMAGE, CRL_DATA. Field introduced in 20.1.1. Allowed in enterprise edition with any value, essentials edition(allowed values- other_file_types), basic edition(allowed values- other_file_types), enterprise with cloud services edition.
+* `type` - Type of the file. Enum options - OTHER_FILE_TYPES, IP_REPUTATION, GEO_DB, TECH_SUPPORT, HSMPACKAGES, IPAMDNSSCRIPTS, CONTROLLER_IMAGE, CRL_DATA, IP_REPUTATION_IPV6. Field introduced in 20.1.1. Allowed in enterprise edition with any value, essentials edition(allowed values- other_file_types), basic edition(allowed values- other_file_types), enterprise with cloud services edition.
 * `uuid` - Uuid of the file. Field introduced in 20.1.1. Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
 * `version` - Version of the file. Field introduced in 20.1.1. Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
 

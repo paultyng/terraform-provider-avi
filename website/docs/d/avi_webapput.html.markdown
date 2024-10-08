@@ -20,18 +20,21 @@ This data source is used to to get avi_webapput objects.
 data "avi_webapput" "foo_webapput" {
     uuid = "webapput-f9cf6b3e-a411-436f-95e2-2982ba2b217b"
     name = "foo"
-}
+    cloud_ref = "/api/cloud/?tenant=admin&name=Default-Cloud"
+  }
 ```
 
 ## Argument Reference
 
 * `name` - (Optional) Search WebappUT by name.
 * `uuid` - (Optional) Search WebappUT by uuid.
-
+* `cloud_ref` - (Optional) Search WebappUT by cloud_ref.
+  
 ## Attributes Reference
 
 In addition to all arguments above, the following attributes are exported:
 
+* `cloud_ref` - Cloud of the webapput object-level0. It is a reference to an object of type cloud. Field introduced in 30.2.2. Allowed in enterprise edition with any value, enterprise with cloud services edition.
 * `configpb_attributes` - Protobuf versioning for config pbs. Field introduced in 21.1.5, 22.1.1. Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services edition.
 * `default_first_int` - Default uint64 field. Field introduced in 30.1.2. Allowed in enterprise edition with any value, enterprise with cloud services edition.
 * `default_second_int` - Default int64 field. Field introduced in 30.1.2. Allowed in enterprise edition with any value, enterprise with cloud services edition.

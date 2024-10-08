@@ -388,6 +388,12 @@ func ResourceServiceEngineGroupSchema() map[string]*schema.Schema {
 			Computed:     true,
 			ValidateFunc: validateBool,
 		},
+		"enable_qat": {
+			Type:         schema.TypeString,
+			Optional:     true,
+			Default:      "false",
+			ValidateFunc: validateBool,
+		},
 		"ephemeral_portrange_end": {
 			Type:         schema.TypeString,
 			Optional:     true,
@@ -990,6 +996,12 @@ func ResourceServiceEngineGroupSchema() map[string]*schema.Schema {
 			Optional: true,
 			Default:  "PLACEMENT_MODE_AUTO",
 		},
+		"pre_upgrade_se_available_mem_threshold": {
+			Type:         schema.TypeString,
+			Optional:     true,
+			Default:      "0",
+			ValidateFunc: validateInteger,
+		},
 		"realtime_se_metrics": {
 			Type:     schema.TypeSet,
 			Optional: true,
@@ -1509,7 +1521,7 @@ func ResourceServiceEngineGroupSchema() map[string]*schema.Schema {
 		"use_objsync": {
 			Type:         schema.TypeString,
 			Optional:     true,
-			Default:      "false",
+			Default:      "true",
 			ValidateFunc: validateBool,
 		},
 		"use_standard_alb": {
@@ -1703,6 +1715,12 @@ func ResourceServiceEngineGroupSchema() map[string]*schema.Schema {
 			Optional:     true,
 			Default:      "64",
 			ValidateFunc: validateInteger,
+		},
+		"waf_use_jit_for_pcre": {
+			Type:         schema.TypeString,
+			Optional:     true,
+			Default:      "true",
+			ValidateFunc: validateBool,
 		},
 	}
 }

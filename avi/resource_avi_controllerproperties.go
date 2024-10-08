@@ -220,6 +220,12 @@ func ResourceControllerPropertiesSchema() map[string]*schema.Schema {
 			Default:      "true",
 			ValidateFunc: validateBool,
 		},
+		"enable_nsx_streaming_agent": {
+			Type:         schema.TypeString,
+			Optional:     true,
+			Default:      "true",
+			ValidateFunc: validateBool,
+		},
 		"enable_per_process_stop": {
 			Type:         schema.TypeString,
 			Optional:     true,
@@ -501,6 +507,12 @@ func ResourceControllerPropertiesSchema() map[string]*schema.Schema {
 			Default:      "false",
 			ValidateFunc: validateBool,
 		},
+		"skip_beego_perf_collection": {
+			Type:         schema.TypeString,
+			Optional:     true,
+			Default:      "false",
+			ValidateFunc: validateBool,
+		},
 		"soft_min_mem_per_se_limit": {
 			Type:         schema.TypeString,
 			Optional:     true,
@@ -511,6 +523,12 @@ func ResourceControllerPropertiesSchema() map[string]*schema.Schema {
 			Type:     schema.TypeList,
 			Optional: true,
 			Elem:     &schema.Schema{Type: schema.TypeInt},
+		},
+		"statecache_properties": {
+			Type:     schema.TypeSet,
+			Optional: true,
+			Computed: true,
+			Elem:     ResourceSCPropertiesSchema(),
 		},
 		"system_report_cleanup_interval": {
 			Type:         schema.TypeString,

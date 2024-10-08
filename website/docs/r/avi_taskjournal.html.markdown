@@ -35,6 +35,7 @@ The following arguments are supported:
 * `obj_cloud_ref` - (Optional) Cloud that this object belongs to. It is a reference to an object of type cloud. Field introduced in 30.2.1. Allowed in enterprise edition with any value, enterprise with cloud services edition.
 * `operation` - (Optional) Operation for which the task journal created. Field introduced in 30.2.1. Allowed in enterprise edition with any value, enterprise with cloud services edition.
 * `patch_image_ref` - (Optional) Image uuid for identifying the current patch. It is a reference to an object of type image. Field introduced in 30.2.1. Allowed in enterprise edition with any value, enterprise with cloud services edition.
+* `tasks` - (Optional) List of all the tasks executed with details. For example, details of tasks to be executed for upgrade filecopy. Field introduced in 31.1.1. Allowed in enterprise edition with any value, enterprise with cloud services edition.
 * `tenant_ref` - (Optional) Tenant uuid associated with the object. It is a reference to an object of type tenant. Field introduced in 30.2.1. Allowed in enterprise edition with any value, enterprise with cloud services edition.
 
 
