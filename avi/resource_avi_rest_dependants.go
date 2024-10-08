@@ -8284,6 +8284,12 @@ func ResourceControllerSizingLimitsSchema() *schema.Resource {
 				Computed:     true,
 				ValidateFunc: validateInteger,
 			},
+			"num_virtualservices_rtmetrics_waf": {
+				Type:         schema.TypeString,
+				Optional:     true,
+				Computed:     true,
+				ValidateFunc: validateInteger,
+			},
 			"num_vrfs": {
 				Type:         schema.TypeString,
 				Optional:     true,
@@ -35309,6 +35315,12 @@ func ResourceTCPProxyProfileSchema() *schema.Resource {
 				Type:         schema.TypeString,
 				Optional:     true,
 				Default:      "2",
+				ValidateFunc: validateInteger,
+			},
+			"delayed_ack_timer_delay": {
+				Type:         schema.TypeString,
+				Optional:     true,
+				Default:      "100",
 				ValidateFunc: validateInteger,
 			},
 			"idle_connection_timeout": {
