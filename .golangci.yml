@@ -10,7 +10,6 @@ run:
       - avi/resource_avi_rest_dependants.go
 
 linters:
-  disable-all: true
   disable:
     - typecheck
     - goimports
