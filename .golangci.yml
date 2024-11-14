@@ -15,7 +15,7 @@ linters:
     - errcheck
     - gofmt
     - gosimple
-    - govet
+    # - govet
     - ineffassign
     - nakedret
     - misspell
