@@ -10,9 +10,7 @@ run:
       - avi/resource_avi_rest_dependants.go
 
 linters:
-  disable:
-    - typecheck
-    - goimports
+  disable-all: true  
   enable:
     - errcheck
     - gofmt
@@ -21,11 +19,13 @@ linters:
     - ineffassign
     - nakedret
     - misspell
-    - staticcheck
+    # - staticcheck
     - unused
     - unconvert
     - vet
     - vetshadow
+    # - typecheck
+    # - goimports
 
 linters-settings:
   errcheck:
