@@ -11,17 +11,18 @@ run:
 
 linters:
   disable-all: true
+  disable:
+    - typecheck
+    - goimports
   enable:
     - errcheck
     - gofmt
-    # - goimports
     - gosimple
     - govet
     - ineffassign
     - nakedret
     - misspell
     - staticcheck
-    # - typecheck
     - unused
     - unconvert
     - vet
