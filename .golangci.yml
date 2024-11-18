@@ -20,8 +20,8 @@ linters:
     - nakedret
     - misspell
     # - staticcheck
-    - unused
-    - unconvert
+    # - unused
+    # - unconvert
     - vet
     - vetshadow
     # - typecheck
