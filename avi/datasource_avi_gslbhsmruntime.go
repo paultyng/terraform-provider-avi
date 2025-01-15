@@ -5,33 +5,53 @@ package avi
 
 import "github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 
-func dataSourceAviAvailabilityZone() *schema.Resource {
+func dataSourceAviGslbHSMRuntime() *schema.Resource {
 	return &schema.Resource{
-		Read: ResourceAviAvailabilityZoneRead,
+		Read: ResourceAviGslbHSMRuntimeRead,
 		Schema: map[string]*schema.Schema{
-			"az_clusters": {
+			"cluster_uuid": {
+				Type:     schema.TypeString,
+				Computed: true,
+			},
+			"enabled": {
+				Type:     schema.TypeString,
+				Computed: true,
+			},
+			"events": {
 				Type:     schema.TypeList,
 				Computed: true,
-				Elem:     ResourceAZClusterSchema(),
+				Elem:     ResourceEventInfoSchema(),
 			},
-			"az_datastore": {
+			"local_info": {
 				Type:     schema.TypeSet,
 				Computed: true,
-				Elem:     ResourceAZDatastoreSchema(),
-			},
-			"cloud_ref": {
-				Type:     schema.TypeString,
-				Optional: true,
-				Computed: true,
-			},
-			"configpb_attributes": {
-				Type:     schema.TypeSet,
-				Computed: true,
-				Elem:     ResourceConfigPbAttributesSchema(),
+				Elem:     ResourceLocalInfoSchema(),
 			},
 			"name": {
 				Type:     schema.TypeString,
 				Optional: true,
+				Computed: true,
+			},
+			"obj_uuid": {
+				Type:     schema.TypeString,
+				Computed: true,
+			},
+			"oper_status": {
+				Type:     schema.TypeSet,
+				Computed: true,
+				Elem:     ResourceOperationalStatusSchema(),
+			},
+			"remote_info": {
+				Type:     schema.TypeSet,
+				Computed: true,
+				Elem:     ResourceRemoteInfoSchema(),
+			},
+			"send_interval": {
+				Type:     schema.TypeString,
+				Computed: true,
+			},
+			"site_name": {
+				Type:     schema.TypeString,
 				Computed: true,
 			},
 			"tenant_ref": {
