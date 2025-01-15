@@ -5,29 +5,15 @@ package avi
 
 import "github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 
-func dataSourceAviGslb() *schema.Resource {
+func dataSourceAviGslbSMRuntime() *schema.Resource {
 	return &schema.Resource{
-		Read: ResourceAviGslbRead,
+		Read: ResourceAviGslbSMRuntimeRead,
 		Schema: map[string]*schema.Schema{
-			"async_interval": {
+			"cluster_leader": {
 				Type:     schema.TypeString,
 				Computed: true,
 			},
-			"clear_on_max_retries": {
-				Type:     schema.TypeString,
-				Computed: true,
-			},
-			"client_ip_addr_group": {
-				Type:     schema.TypeSet,
-				Computed: true,
-				Elem:     ResourceGslbClientIpAddrGroupSchema(),
-			},
-			"configpb_attributes": {
-				Type:     schema.TypeSet,
-				Computed: true,
-				Elem:     ResourceConfigPbAttributesSchema(),
-			},
-			"description": {
+			"cluster_uuid": {
 				Type:     schema.TypeString,
 				Computed: true,
 			},
@@ -36,23 +22,21 @@ func dataSourceAviGslb() *schema.Resource {
 				Computed: true,
 				Elem:     ResourceDNSConfigSchema(),
 			},
-			"enable_config_by_members": {
+			"dns_info": {
+				Type:     schema.TypeSet,
+				Computed: true,
+				Elem:     ResourceGslbDnsInfoSchema(),
+			},
+			"enabled": {
 				Type:     schema.TypeString,
 				Computed: true,
 			},
-			"error_resync_interval": {
-				Type:     schema.TypeString,
+			"events": {
+				Type:     schema.TypeList,
 				Computed: true,
+				Elem:     ResourceEventInfoSchema(),
 			},
-			"fileobject_max_file_versions": {
-				Type:     schema.TypeString,
-				Computed: true,
-			},
-			"gs_member_fqdn_resolution_on_se": {
-				Type:     schema.TypeString,
-				Computed: true,
-			},
-			"is_federated": {
+			"health_monitor_info": {
 				Type:     schema.TypeString,
 				Computed: true,
 			},
@@ -60,7 +44,7 @@ func dataSourceAviGslb() *schema.Resource {
 				Type:     schema.TypeString,
 				Computed: true,
 			},
-			"maintenance_mode": {
+			"member_type": {
 				Type:     schema.TypeString,
 				Computed: true,
 			},
@@ -69,41 +53,52 @@ func dataSourceAviGslb() *schema.Resource {
 				Optional: true,
 				Computed: true,
 			},
-			"replication_policy": {
+			"node_uuid": {
+				Type:     schema.TypeString,
+				Computed: true,
+			},
+			"num_of_retries": {
+				Type:     schema.TypeString,
+				Computed: true,
+			},
+			"obj_uuid": {
+				Type:     schema.TypeString,
+				Computed: true,
+			},
+			"oper_status": {
 				Type:     schema.TypeSet,
 				Computed: true,
-				Elem:     ResourceReplicationPolicySchema(),
+				Elem:     ResourceOperationalStatusSchema(),
 			},
-			"send_interval": {
+			"remote_info": {
+				Type:     schema.TypeSet,
+				Computed: true,
+				Elem:     ResourceRemoteInfoSchema(),
+			},
+			"role": {
 				Type:     schema.TypeString,
 				Computed: true,
 			},
-			"send_interval_prior_to_maintenance_mode": {
+			"site_name": {
 				Type:     schema.TypeString,
 				Computed: true,
 			},
-			"short_probe_interval": {
+			"site_type": {
 				Type:     schema.TypeString,
 				Computed: true,
 			},
-			"sites": {
-				Type:     schema.TypeList,
+			"state": {
+				Type:     schema.TypeString,
 				Computed: true,
-				Elem:     ResourceGslbSiteSchema(),
+			},
+			"sw_version": {
+				Type:     schema.TypeString,
+				Computed: true,
 			},
 			"tenant_ref": {
 				Type:     schema.TypeString,
 				Optional: true,
 				Computed: true,
-			},
-			"tenant_scoped": {
-				Type:     schema.TypeString,
-				Computed: true,
-			},
-			"third_party_sites": {
-				Type:     schema.TypeList,
-				Computed: true,
-				Elem:     ResourceGslbThirdPartySiteSchema(),
 			},
 			"uuid": {
 				Type:     schema.TypeString,
