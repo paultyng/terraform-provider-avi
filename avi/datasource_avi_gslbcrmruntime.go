@@ -5,50 +5,56 @@ package avi
 
 import "github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 
-func dataSourceAviTaskJournal() *schema.Resource {
+func dataSourceAviGslbCRMRuntime() *schema.Resource {
 	return &schema.Resource{
-		Read: ResourceAviTaskJournalRead,
+		Read: ResourceAviGslbCRMRuntimeRead,
 		Schema: map[string]*schema.Schema{
-			"errors": {
-				Type:     schema.TypeList,
-				Computed: true,
-				Elem:     ResourceJournalErrorSchema(),
-			},
-			"image_ref": {
+			"cluster_uuid": {
 				Type:     schema.TypeString,
 				Computed: true,
 			},
-			"info": {
+			"events": {
+				Type:     schema.TypeList,
+				Computed: true,
+				Elem:     ResourceEventInfoSchema(),
+			},
+			"fds_info": {
 				Type:     schema.TypeSet,
 				Computed: true,
-				Elem:     ResourceJournalInfoSchema(),
+				Elem:     ResourceFdsInfoSchema(),
+			},
+			"local_info": {
+				Type:     schema.TypeSet,
+				Computed: true,
+				Elem:     ResourceLocalInfoSchema(),
 			},
 			"name": {
 				Type:     schema.TypeString,
 				Optional: true,
 				Computed: true,
 			},
-			"obj_cloud_ref": {
+			"obj_uuid": {
 				Type:     schema.TypeString,
 				Computed: true,
 			},
-			"operation": {
-				Type:     schema.TypeString,
-				Computed: true,
-			},
-			"patch_image_ref": {
-				Type:     schema.TypeString,
-				Computed: true,
-			},
-			"summary": {
+			"remote_info": {
 				Type:     schema.TypeSet,
 				Computed: true,
-				Elem:     ResourceJournalSummarySchema(),
+				Elem:     ResourceRemoteInfoSchema(),
 			},
-			"tasks": {
-				Type:     schema.TypeList,
+			"replication_policy": {
+				Type:     schema.TypeSet,
 				Computed: true,
-				Elem:     ResourceJournalTaskSchema(),
+				Elem:     ResourceReplicationPolicySchema(),
+			},
+			"site_name": {
+				Type:     schema.TypeString,
+				Computed: true,
+			},
+			"status_info": {
+				Type:     schema.TypeSet,
+				Computed: true,
+				Elem:     ResourceOperationalStatusSchema(),
 			},
 			"tenant_ref": {
 				Type:     schema.TypeString,
