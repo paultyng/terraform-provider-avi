@@ -5,28 +5,34 @@ package avi
 
 import "github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 
-func dataSourceAviLicenseStatus() *schema.Resource {
+func dataSourceAviUpgradeProfile() *schema.Resource {
 	return &schema.Resource{
-		Read: ResourceAviLicenseStatusRead,
+		Read: ResourceAviUpgradeProfileRead,
 		Schema: map[string]*schema.Schema{
-			"configpb_attributes": {
+			"controller": {
 				Type:     schema.TypeSet,
 				Computed: true,
-				Elem:     ResourceConfigPbAttributesSchema(),
+				Elem:     ResourceControllerParamsSchema(),
 			},
-			"saas_status": {
+			"dry_run": {
 				Type:     schema.TypeSet,
 				Computed: true,
-				Elem:     ResourceSaasLicensingStatusSchema(),
+				Elem:     ResourceDryRunParamsSchema(),
 			},
-			"service_update": {
+			"image": {
 				Type:     schema.TypeSet,
 				Computed: true,
-				Elem:     ResourceLicenseServiceUpdateSchema(),
+				Elem:     ResourceImageParamsSchema(),
 			},
-			"tenant_uuid": {
-				Type:     schema.TypeString,
+			"pre_checks": {
+				Type:     schema.TypeSet,
 				Computed: true,
+				Elem:     ResourcePreChecksParamsSchema(),
+			},
+			"service_engine": {
+				Type:     schema.TypeSet,
+				Computed: true,
+				Elem:     ResourceServiceEngineParamsSchema(),
 			},
 			"uuid": {
 				Type:     schema.TypeString,

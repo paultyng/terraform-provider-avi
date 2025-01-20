@@ -5,30 +5,10 @@ package avi
 
 import "github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 
-func dataSourceAviAvailabilityZone() *schema.Resource {
+func dataSourceAviLocalWorkerFdsVersion() *schema.Resource {
 	return &schema.Resource{
-		Read: ResourceAviAvailabilityZoneRead,
+		Read: ResourceAviLocalWorkerFdsVersionRead,
 		Schema: map[string]*schema.Schema{
-			"az_clusters": {
-				Type:     schema.TypeList,
-				Computed: true,
-				Elem:     ResourceAZClusterSchema(),
-			},
-			"az_datastore": {
-				Type:     schema.TypeSet,
-				Computed: true,
-				Elem:     ResourceAZDatastoreSchema(),
-			},
-			"cloud_ref": {
-				Type:     schema.TypeString,
-				Optional: true,
-				Computed: true,
-			},
-			"configpb_attributes": {
-				Type:     schema.TypeSet,
-				Computed: true,
-				Elem:     ResourceConfigPbAttributesSchema(),
-			},
 			"name": {
 				Type:     schema.TypeString,
 				Optional: true,
@@ -39,9 +19,17 @@ func dataSourceAviAvailabilityZone() *schema.Resource {
 				Optional: true,
 				Computed: true,
 			},
+			"timeline": {
+				Type:     schema.TypeString,
+				Computed: true,
+			},
 			"uuid": {
 				Type:     schema.TypeString,
 				Optional: true,
+				Computed: true,
+			},
+			"version": {
+				Type:     schema.TypeString,
 				Computed: true,
 			},
 		},
