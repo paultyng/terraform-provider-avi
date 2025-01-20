@@ -61,10 +61,6 @@ func dataSourceAviFileObject() *schema.Resource {
 				Type:     schema.TypeString,
 				Computed: true,
 			},
-			"max_version_count": {
-				Type:     schema.TypeString,
-				Computed: true,
-			},
 			"name": {
 				Type:     schema.TypeString,
 				Optional: true,

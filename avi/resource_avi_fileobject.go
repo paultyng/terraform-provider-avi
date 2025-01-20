@@ -75,12 +75,6 @@ func ResourceFileObjectSchema() map[string]*schema.Schema {
 			Default:      "false",
 			ValidateFunc: validateBool,
 		},
-		"max_version_count": {
-			Type:         schema.TypeString,
-			Optional:     true,
-			Default:      "3",
-			ValidateFunc: validateInteger,
-		},
 		"name": {
 			Type:     schema.TypeString,
 			Required: true,
