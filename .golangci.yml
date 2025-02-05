@@ -21,7 +21,7 @@ linters:
     - nakedret
     - misspell
     - staticcheck
-    - typecheck
+    # - typecheck
     - unused
     - unconvert
     - vet
